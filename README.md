@@ -1,4 +1,11 @@
 # jumper
+
+Getting Started
+---------------
+For right now, all you have to do is open `./index.html` in a web browser of your choice!
+A simple Terminal (Mac) command from the project directory:
+`$ open -a Google\ Chrome index.html`
+
 Tools
 -----
  * [Waffle.io](https://waffle.io/oogroup/jumper)
