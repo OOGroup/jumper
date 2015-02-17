@@ -2,8 +2,9 @@
 
 Getting Started
 ---------------
-For right now, all you have to do is open `./index.html` in a web browser of your choice!
-A simple Terminal (Mac) command from the project directory:
+For right now, all you have to do is open `./index.html` in a web browser of your choice! 
+<br><br>
+A simple Terminal (Mac) command to start from the project directory:
 `$ open -a Google\ Chrome index.html`
 
 Tools
