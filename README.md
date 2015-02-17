@@ -2,12 +2,10 @@
 
 Getting Started
 ---------------
-For right now, all you have to do is open `./index.html` in a web browser of your choice! 
+1. Open `./index.html` in a web browser of your choice! <br>
+`$ open -a Google\ Chrome index.html`<br>
 <br>
-A simple Terminal (Mac) command to start from the project directory: <br>
-`$ open -a Google\ Chrome index.html`
-<br>
-Then, go to the [Project Workflow on Waffle](https://waffle.io/oogroup/jumper) and pick something to work on!
+2. Go to the [Project Workflow on Waffle](https://waffle.io/oogroup/jumper) and pick something to work on!<br>
 
 Tools
 -----
