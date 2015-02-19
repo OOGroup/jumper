@@ -15,6 +15,8 @@
 		7A86E0121A968BC5008A148A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A86E0111A968BC5008A148A /* Images.xcassets */; };
 		7A86E0151A968BC5008A148A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A86E0131A968BC5008A148A /* LaunchScreen.xib */; };
 		7A86E0211A968BC5008A148A /* JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E0201A968BC5008A148A /* JumperTests.swift */; };
+		7A86E02B1A9690E4008A148A /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7A86E02A1A9690E4008A148A /* TestScene.sks */; };
+		7A86E02D1A96916A008A148A /* TestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E02C1A96916A008A148A /* TestScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		7A86E01A1A968BC5008A148A /* JumperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JumperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A86E01F1A968BC5008A148A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A86E0201A968BC5008A148A /* JumperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumperTests.swift; sourceTree = "<group>"; };
+		7A86E02A1A9690E4008A148A /* TestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestScene.sks; sourceTree = "<group>"; };
+		7A86E02C1A96916A008A148A /* TestScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +88,9 @@
 				7A86E0061A968BC5008A148A /* AppDelegate.swift */,
 				7A86E0081A968BC5008A148A /* GameScene.sks */,
 				7A86E00A1A968BC5008A148A /* GameScene.swift */,
+				7A86E02C1A96916A008A148A /* TestScene.swift */,
 				7A86E00C1A968BC5008A148A /* GameViewController.swift */,
+				7A86E02A1A9690E4008A148A /* TestScene.sks */,
 				7A86E00E1A968BC5008A148A /* Main.storyboard */,
 				7A86E0111A968BC5008A148A /* Images.xcassets */,
 				7A86E0131A968BC5008A148A /* LaunchScreen.xib */,
@@ -201,6 +207,7 @@
 				7A86E0151A968BC5008A148A /* LaunchScreen.xib in Resources */,
 				7A86E0121A968BC5008A148A /* Images.xcassets in Resources */,
 				7A86E0091A968BC5008A148A /* GameScene.sks in Resources */,
+				7A86E02B1A9690E4008A148A /* TestScene.sks in Resources */,
 				7A86E0101A968BC5008A148A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A86E00B1A968BC5008A148A /* GameScene.swift in Sources */,
+				7A86E02D1A96916A008A148A /* TestScene.swift in Sources */,
 				7A86E00D1A968BC5008A148A /* GameViewController.swift in Sources */,
 				7A86E0071A968BC5008A148A /* AppDelegate.swift in Sources */,
 			);
