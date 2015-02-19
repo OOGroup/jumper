@@ -17,28 +17,7 @@
     var count = 0;
 
     function signup() {
-      Parse.initialize("kgbSIeaR7TKOxT3vBxPfue3bTbvTK5jk3qk6XLqY", "RiHCn1sLse9pX3hM8dxga4wD2StNDL3wXX5Vb62Z");
-
-      var user = new Parse.User();
-      user.set("username", $('#username').val());
-
-      if ( $('#password').val() === $('#confirm').val() ) {
-        user.set("password", $('#password').val());
-      } else {
-        alert("Passwords must match!");
-        return;
-      }
-       
-      user.signUp(null, {
-        success: function(user) {
-          // Hooray! Let them use the app now.
-          alert("Success!");
-        },
-        error: function(user, error) {
-          // Show the error message somewhere and let the user try again.
-          alert("Error: " + error.code + " " + error.message);
-        }
-      });
+      
     }
 
   </script>
@@ -47,7 +26,7 @@
   <h1>Jumper (working title)</h1>
   <h2 class="success">Create Account</h2>
 
-  <form action="#" method="post">
+  <form action="/signup" method="post">
     <div>
       <label for="username">Username:</label>
       <input type="text" name="username" id="username" value="" tabindex="1" placeholder="Username"/>
@@ -62,11 +41,11 @@
     </div>
   
     <div>
-      <input type="submit" value="Submit" onclick="signup();"/>
+      <input type="submit" value="Submit"/>
     </div>
   </form>
 
-  
+  <!-- <script type="text/javascript" src="signup.js"></script> -->
 </body>
 
 </html>

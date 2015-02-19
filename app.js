@@ -1,74 +1,116 @@
-function GameObject(x, y, width, height) {
-	this.x = x;
-	this.y = y;
-	this.width = width;
-	this.height = height;
-}
+'use strict';
+var express = require('express'),
+	http = require('http'),
+	path = require('path'),
+	$ = require('jquery'),
+	Parse = require('parse').Parse;
 
-function Wall(x, y, width, height) {
-	//GameObject.apply(this, arguments);
-	this.inheritFrom = GameObject;
-	this.inheritFrom(x, y, width, height);
-	/*
-	this.x = x;
-	this.y = y;
-	this.width = width;
-	this.height = height;
-	*/
-	this.moving = true;
+var app = express();
 
-	this.draw = function(){
-		var c = document.getElementById("gameCanvas");
-		var ctx = c.getContext("2d");
-		ctx.fillStyle = "#FF0000";
-		ctx.fillRect(c.width-this.x,c.height-this.y,this.width,this.height);		
-	}
-}
+Parse.initialize("kgbSIeaR7TKOxT3vBxPfue3bTbvTK5jk3qk6XLqY", "RiHCn1sLse9pX3hM8dxga4wD2StNDL3wXX5Vb62Z");
 
-function Person(x, y, width, height) {
-	//GameObject.apply(this, arguments);
-	this.inheritFrom = GameObject;
-	this.inheritFrom(x, y, width, height);
+app.set('port', process.env.PORT || 4567);
+app.set('views', path.join(__dirname, '/public/html'));
+// app.set('view engine', 'jade');
+app.use(express.static(path.join(__dirname, '/public')));
+app.engine("html", require("ejs").renderFile);
 
-	this.moving = true;
+// HTTP Requests
 
-	this.draw = function(){
-		var c = document.getElementById("gameCanvas");
-		var ctx = c.getContext("2d");
-		ctx.fillStyle = "#F00000";
-		ctx.fillRect(this.x,this.y,this.width,this.height);		
-	}	
-}
+app.get('/', function(req, res){
+	res.render("index.html");
+});
 
-function Level(objs) {
-	this.objects = objs;
+app.get('/signup', function(req, res){
+	res.render("signup.html");
+});
 
-	this.drawLevel = function(){
-		var l = this.objects.length
-		for (var i = 0; i < l; i++){
-			this.objects[i].draw();
-		}		
-	}
-}
+app.post('/signup', function(req, res) {
+	
 
-function GameController(l) {
-	this.levels = l;
-	this.currentLevel = 0;
+	
+});
 
-	this.startLevel = function(level){
-		this.levels[level].drawLevel();		
-	}
-}
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening at: http://localhost:%d/', app.get('port'));
+});
 
-function drawShit(){
-	Wall.prototype = Object.create(GameObject.prototype);
-	var wall = new Wall(75,75,75,75);
-	var person = new Person(0,0,75,75);
-	var test = (person instanceof GameObject);
-	var l = new Level([wall, person]);
-	var g = new GameController([l])
-	g.startLevel(0);
-}
 
-drawShit();
+
+
+// MODEL DEFINITIONS
+
+// function GameObject(x, y, width, height) {
+// 	this.x = x;
+// 	this.y = y;
+// 	this.width = width;
+// 	this.height = height;
+// }
+
+// function Wall(x, y, width, height) {
+// 	//GameObject.apply(this, arguments);
+// 	this.inheritFrom = GameObject;
+// 	this.inheritFrom(x, y, width, height);
+// 	/*
+// 	this.x = x;
+// 	this.y = y;
+// 	this.width = width;
+// 	this.height = height;
+// 	*/
+// 	this.moving = true;
+
+// 	this.draw = function(){
+// 		var c = document.getElementById("gameCanvas");
+// 		var ctx = c.getContext("2d");
+// 		ctx.fillStyle = "#FF0000";
+// 		ctx.fillRect(c.width-this.x,c.height-this.y,this.width,this.height);		
+// 	}
+// }
+
+// function Person(x, y, width, height) {
+// 	//GameObject.apply(this, arguments);
+// 	this.inheritFrom = GameObject;
+// 	this.inheritFrom(x, y, width, height);
+
+// 	this.moving = true;
+
+// 	this.draw = function(){
+// 		var c = document.getElementById("gameCanvas");
+// 		var ctx = c.getContext("2d");
+// 		ctx.fillStyle = "#F00000";
+// 		ctx.fillRect(this.x,this.y,this.width,this.height);		
+// 	}	
+// }
+
+// function Level(objs) {
+// 	this.objects = objs;
+
+// 	this.drawLevel = function(){
+// 		var l = this.objects.length
+// 		for (var i = 0; i < l; i++){
+// 			this.objects[i].draw();
+// 		}		
+// 	}
+// }
+
+// function GameController(l) {
+// 	this.levels = l;
+// 	this.currentLevel = 0;
+
+// 	this.startLevel = function(level){
+// 		this.levels[level].drawLevel();		
+// 	}
+// }
+
+// function drawShit(){
+// 	Wall.prototype = Object.create(GameObject.prototype);
+// 	var wall = new Wall(75,75,75,75);
+// 	var person = new Person(0,0,75,75);
+// 	var test = (person instanceof GameObject);
+// 	var l = new Level([wall, person]);
+// 	var g = new GameController([l])
+// 	g.startLevel(0);
+// }
+
+// drawShit();
 

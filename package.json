@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/OOGroup/jumper/issues"
   },
-  "homepage": "https://github.com/OOGroup/jumper"
+  "homepage": "https://github.com/OOGroup/jumper",
+  "dependencies": {
+    "ejs": "^2.2.4",
+    "express": "^4.11.2",
+    "jquery": "^2.1.3",
+    "node-dev": "^2.6.1",
+    "parse": "^1.3.4"
+  }
 }
