@@ -9,36 +9,38 @@
 import SpriteKit
 
 class TestScene: SKScene {
+    
+    // These are instance variables
+    // let defines constants
+    // var defines variables
+    var sprite = SKSpriteNode(color: UIColor.redColor(), size: CGSize(width: 50.0, height: 50.0))
+    var location = CGPoint(x: 100.0, y: 100.0)
+    
+    // Function definition
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-//        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-//        myLabel.text = "Hello, World!";
-//        myLabel.fontSize = 65;
-//        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
         
-//        self.addChild(myLabel)
+        self.sprite.xScale = 0.5
+        self.sprite.yScale = 0.5
+        
+        // Add sprite to a view
+        self.addChild(self.sprite)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
+        
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             
-            let sprite = SKSpriteNode(fileNamed: "TestScene")
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
             
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
+            self.location = location
+
         }
     }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        self.sprite.position = self.location
     }
 }
