@@ -5,13 +5,13 @@ Getting Started (New iOS Version)
 ---------------
   From this directory:
   1. Open the XCode Project
-    `$ open Jumper.xcodeproj`
+    - `$ open Jumper.xcodeproj`
   2. Attempt to run the app by pressing the play button in the upper left of XCode.
   3. Try clicking on the screen, a spinning spaceship should show up on every click.
   
-  If something goes wrong:
-    * Try going to menu Project > (Hold Alt) > Clean Build Folder...
-      - If that doesn't work. Ask Dillon, haha.
+**If something goes wrong:**
+ * Try going to menu Project > (Hold Alt) > Clean Build Folder...
+   - If that doesn't work. Ask Dillon, haha.
 
 Tools
 -----
