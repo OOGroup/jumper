@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A8318431A97E966008CF960 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A83183E1A97E966008CF960 /* Bolts.framework */; };
+		7A8318441A97E966008CF960 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A83183F1A97E966008CF960 /* Parse.framework */; };
+		7A8318451A97E966008CF960 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8318401A97E966008CF960 /* ParseCrashReporting.framework */; };
+		7A8318461A97E966008CF960 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8318411A97E966008CF960 /* ParseFacebookUtils.framework */; };
+		7A8318471A97E966008CF960 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8318421A97E966008CF960 /* ParseUI.framework */; };
+		7A83184A1A97EB83008CF960 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8318491A97EB83008CF960 /* libstdc++.6.dylib */; };
+		7A83184C1A97EB8D008CF960 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A83184B1A97EB8D008CF960 /* MobileCoreServices.framework */; };
+		7A83184E1A97EB98008CF960 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A83184D1A97EB98008CF960 /* SystemConfiguration.framework */; };
+		7A8318501A97EBA0008CF960 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A83184F1A97EBA0008CF960 /* AudioToolbox.framework */; };
+		7A8318521A97EBA9008CF960 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8318511A97EBA9008CF960 /* libsqlite3.dylib */; };
 		7A86E0071A968BC5008A148A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E0061A968BC5008A148A /* AppDelegate.swift */; };
 		7A86E0091A968BC5008A148A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7A86E0081A968BC5008A148A /* GameScene.sks */; };
 		7A86E00B1A968BC5008A148A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E00A1A968BC5008A148A /* GameScene.swift */; };
@@ -17,6 +27,9 @@
 		7A86E0211A968BC5008A148A /* JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E0201A968BC5008A148A /* JumperTests.swift */; };
 		7A86E02B1A9690E4008A148A /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7A86E02A1A9690E4008A148A /* TestScene.sks */; };
 		7A86E02D1A96916A008A148A /* TestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E02C1A96916A008A148A /* TestScene.swift */; };
+		7A86E02F1A969628008A148A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E02E1A969628008A148A /* SignUpViewController.swift */; };
+		7A86E0311A96969D008A148A /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E0301A96969D008A148A /* MainMenuViewController.swift */; };
+		7A86E0341A969878008A148A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E0331A969878008A148A /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A83183E1A97E966008CF960 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		7A83183F1A97E966008CF960 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		7A8318401A97E966008CF960 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		7A8318411A97E966008CF960 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		7A8318421A97E966008CF960 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		7A8318491A97EB83008CF960 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		7A83184B1A97EB8D008CF960 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7A83184D1A97EB98008CF960 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7A83184F1A97EBA0008CF960 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7A8318511A97EBA9008CF960 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		7A86E0011A968BC5008A148A /* Jumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jumper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A86E0051A968BC5008A148A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A86E0061A968BC5008A148A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +67,9 @@
 		7A86E0201A968BC5008A148A /* JumperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumperTests.swift; sourceTree = "<group>"; };
 		7A86E02A1A9690E4008A148A /* TestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestScene.sks; sourceTree = "<group>"; };
 		7A86E02C1A96916A008A148A /* TestScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScene.swift; sourceTree = "<group>"; };
+		7A86E02E1A969628008A148A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7A86E0301A96969D008A148A /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		7A86E0331A969878008A148A /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +77,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A8318521A97EBA9008CF960 /* libsqlite3.dylib in Frameworks */,
+				7A8318501A97EBA0008CF960 /* AudioToolbox.framework in Frameworks */,
+				7A83184E1A97EB98008CF960 /* SystemConfiguration.framework in Frameworks */,
+				7A83184C1A97EB8D008CF960 /* MobileCoreServices.framework in Frameworks */,
+				7A83184A1A97EB83008CF960 /* libstdc++.6.dylib in Frameworks */,
+				7A8318431A97E966008CF960 /* Bolts.framework in Frameworks */,
+				7A8318441A97E966008CF960 /* Parse.framework in Frameworks */,
+				7A8318451A97E966008CF960 /* ParseCrashReporting.framework in Frameworks */,
+				7A8318461A97E966008CF960 /* ParseFacebookUtils.framework in Frameworks */,
+				7A8318471A97E966008CF960 /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +100,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A8318481A97E99D008CF960 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A8318511A97EBA9008CF960 /* libsqlite3.dylib */,
+				7A83184F1A97EBA0008CF960 /* AudioToolbox.framework */,
+				7A83184D1A97EB98008CF960 /* SystemConfiguration.framework */,
+				7A83184B1A97EB8D008CF960 /* MobileCoreServices.framework */,
+				7A8318491A97EB83008CF960 /* libstdc++.6.dylib */,
+				7A83183E1A97E966008CF960 /* Bolts.framework */,
+				7A83183F1A97E966008CF960 /* Parse.framework */,
+				7A8318401A97E966008CF960 /* ParseCrashReporting.framework */,
+				7A8318411A97E966008CF960 /* ParseFacebookUtils.framework */,
+				7A8318421A97E966008CF960 /* ParseUI.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		7A86DFF81A968BC5008A148A = {
 			isa = PBXGroup;
 			children = (
@@ -85,15 +139,16 @@
 		7A86E0031A968BC5008A148A /* Jumper */ = {
 			isa = PBXGroup;
 			children = (
-				7A86E0061A968BC5008A148A /* AppDelegate.swift */,
-				7A86E0081A968BC5008A148A /* GameScene.sks */,
-				7A86E00A1A968BC5008A148A /* GameScene.swift */,
-				7A86E02C1A96916A008A148A /* TestScene.swift */,
-				7A86E00C1A968BC5008A148A /* GameViewController.swift */,
-				7A86E02A1A9690E4008A148A /* TestScene.sks */,
 				7A86E00E1A968BC5008A148A /* Main.storyboard */,
+				7A86E0061A968BC5008A148A /* AppDelegate.swift */,
+				7A86E0301A96969D008A148A /* MainMenuViewController.swift */,
+				7A86E0331A969878008A148A /* SignInViewController.swift */,
+				7A86E02E1A969628008A148A /* SignUpViewController.swift */,
+				7A86E00C1A968BC5008A148A /* GameViewController.swift */,
+				7A86E0321A9696BD008A148A /* Scenes */,
 				7A86E0111A968BC5008A148A /* Images.xcassets */,
 				7A86E0131A968BC5008A148A /* LaunchScreen.xib */,
+				7A8318481A97E99D008CF960 /* Frameworks */,
 				7A86E0041A968BC5008A148A /* Supporting Files */,
 			);
 			path = Jumper;
@@ -122,6 +177,17 @@
 				7A86E01F1A968BC5008A148A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7A86E0321A9696BD008A148A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7A86E00A1A968BC5008A148A /* GameScene.swift */,
+				7A86E0081A968BC5008A148A /* GameScene.sks */,
+				7A86E02C1A96916A008A148A /* TestScene.swift */,
+				7A86E02A1A9690E4008A148A /* TestScene.sks */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,10 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A86E0341A969878008A148A /* SignInViewController.swift in Sources */,
+				7A86E0311A96969D008A148A /* MainMenuViewController.swift in Sources */,
 				7A86E00B1A968BC5008A148A /* GameScene.swift in Sources */,
 				7A86E02D1A96916A008A148A /* TestScene.swift in Sources */,
 				7A86E00D1A968BC5008A148A /* GameViewController.swift in Sources */,
 				7A86E0071A968BC5008A148A /* AppDelegate.swift in Sources */,
+				7A86E02F1A969628008A148A /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +421,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Jumper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -362,6 +435,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Jumper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -421,6 +498,7 @@
 				7A86E0261A968BC5008A148A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A86E0271A968BC5008A148A /* Build configuration list for PBXNativeTarget "JumperTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +507,7 @@
 				7A86E0291A968BC5008A148A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
