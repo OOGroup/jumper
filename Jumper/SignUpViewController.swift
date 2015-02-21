@@ -14,5 +14,4 @@ class SignUpViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var confirmTextField: UITextField!
 
-    
 }

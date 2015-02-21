@@ -10,4 +10,7 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
+    @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    
 }
