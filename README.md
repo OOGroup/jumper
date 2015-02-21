@@ -1,6 +1,8 @@
 # jumper
-[Project Waffle](https://waffle.io/oogroup/jumper) <br>
-[Database GUI](https://www.parse.com/apps/csci4448-project/collections#class/_User)
+Tools
+-----
+* [Project Organization](https://waffle.io/oogroup/jumper) (Waffle.io)
+* [Database](https://www.parse.com/apps/csci4448-project/collections#class/_User) (Parse)
 
 Getting Started (New iOS Version)
 ---------------
@@ -8,16 +10,10 @@ Getting Started (New iOS Version)
   1. Open the XCode Project
     - `$ open Jumper.xcodeproj`
   2. Attempt to run the app by pressing the play button in the upper left of XCode.
-  3. Try clicking on the screen, a spinning spaceship should show up on every click.
   
 **If something goes wrong:**
  * Try going to menu Project > (Hold Alt) > Clean Build Folder...
    - If that doesn't work. Ask Dillon, haha.
-
-Tools
------
- * [Waffle.io](https://waffle.io/oogroup/jumper)
-
 
 Collaborators
 -------------
