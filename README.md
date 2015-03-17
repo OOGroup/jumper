@@ -1,5 +1,5 @@
 # jumper
-
+http://www.gamefromscratch.com/post/2014/06/03/Game-development-tutorial-Swift-and-SpriteKit-Part-1-A-Simple-iOSMac-OS-App.aspx
 Getting Started (New iOS Version)
 ---------------
   From this directory:

@@ -7,13 +7,27 @@
 //
 
 import SpriteKit
+//
+//  DemoScene.swift
+//  Jumper
+//
+//  Created by Jenna Raderstrong on 3/16/15.
+//  Copyright (c) 2015 OOGroup. All rights reserved.
+//
+
+import AVFoundation
+import SpriteKit
+
+
 
 class TestScene: SKScene {
     
     // These are instance variables
     // let defines constants
     // var defines variables
-    var sprite = SKSpriteNode(color: UIColor.blueColor(), size: CGSize(width: 50.0, height: 50.0))
+
+    var sprite = SKSpriteNode(imageNamed: "kitten.jpg")
+    
     var location = CGPoint(x: 100.0, y: 100.0)
     
     // Function definition
