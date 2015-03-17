@@ -13,7 +13,7 @@ class TestScene: SKScene {
     // These are instance variables
     // let defines constants
     // var defines variables
-    var sprite = SKSpriteNode(color: UIColor.redColor(), size: CGSize(width: 50.0, height: 50.0))
+    var sprite = SKSpriteNode(color: UIColor.blueColor(), size: CGSize(width: 50.0, height: 50.0))
     var location = CGPoint(x: 100.0, y: 100.0)
     
     // Function definition
