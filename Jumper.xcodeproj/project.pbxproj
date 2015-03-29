@@ -18,18 +18,21 @@
 		7A83185B1A980B43008CF960 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8318561A980B43008CF960 /* ParseFacebookUtils.framework */; };
 		7A83185C1A980B43008CF960 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8318571A980B43008CF960 /* ParseUI.framework */; };
 		7A86E0071A968BC5008A148A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E0061A968BC5008A148A /* AppDelegate.swift */; };
-		7A86E0091A968BC5008A148A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7A86E0081A968BC5008A148A /* GameScene.sks */; };
-		7A86E00B1A968BC5008A148A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E00A1A968BC5008A148A /* GameScene.swift */; };
 		7A86E00D1A968BC5008A148A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E00C1A968BC5008A148A /* GameViewController.swift */; };
 		7A86E0101A968BC5008A148A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A86E00E1A968BC5008A148A /* Main.storyboard */; };
 		7A86E0121A968BC5008A148A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A86E0111A968BC5008A148A /* Images.xcassets */; };
 		7A86E0151A968BC5008A148A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A86E0131A968BC5008A148A /* LaunchScreen.xib */; };
 		7A86E0211A968BC5008A148A /* JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E0201A968BC5008A148A /* JumperTests.swift */; };
-		7A86E02B1A9690E4008A148A /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7A86E02A1A9690E4008A148A /* TestScene.sks */; };
-		7A86E02D1A96916A008A148A /* TestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E02C1A96916A008A148A /* TestScene.swift */; };
 		7A86E02F1A969628008A148A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E02E1A969628008A148A /* SignUpViewController.swift */; };
 		7A86E0311A96969D008A148A /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E0301A96969D008A148A /* MainMenuViewController.swift */; };
 		7A86E0341A969878008A148A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E0331A969878008A148A /* SignInViewController.swift */; };
+		7ADE29361AC88C35000E6782 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE29351AC88C35000E6782 /* Level.swift */; };
+		7ADE29381AC890A1000E6782 /* level-one.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE29371AC890A1000E6782 /* level-one.sks */; };
+		7ADE293A1AC89BE8000E6782 /* level-two.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE29391AC89BE8000E6782 /* level-two.sks */; };
+		7ADE293C1AC89BF8000E6782 /* level-three.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE293B1AC89BF8000E6782 /* level-three.sks */; };
+		7ADE293E1AC89CE3000E6782 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE293D1AC89CE3000E6782 /* Scene.swift */; };
+		7ADE29411AC8A399000E6782 /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE293F1AC8A399000E6782 /* TestScene.sks */; };
+		7ADE29421AC8A399000E6782 /* TestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE29401AC8A399000E6782 /* TestScene.swift */; };
 		9881561F1AB7938000E8AB7A /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881561E1AB7938000E8AB7A /* GameObject.swift */; };
 		988156211AB7963B00E8AB7A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988156201AB7963B00E8AB7A /* Player.swift */; };
 		988156251AB799C400E8AB7A /* trampoline.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 988156221AB799C400E8AB7A /* trampoline.jpg */; };
@@ -62,8 +65,6 @@
 		7A86E0011A968BC5008A148A /* Jumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jumper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A86E0051A968BC5008A148A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A86E0061A968BC5008A148A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7A86E0081A968BC5008A148A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		7A86E00A1A968BC5008A148A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		7A86E00C1A968BC5008A148A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7A86E00F1A968BC5008A148A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A86E0111A968BC5008A148A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -71,11 +72,16 @@
 		7A86E01A1A968BC5008A148A /* JumperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JumperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A86E01F1A968BC5008A148A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A86E0201A968BC5008A148A /* JumperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumperTests.swift; sourceTree = "<group>"; };
-		7A86E02A1A9690E4008A148A /* TestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestScene.sks; sourceTree = "<group>"; };
-		7A86E02C1A96916A008A148A /* TestScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScene.swift; sourceTree = "<group>"; };
 		7A86E02E1A969628008A148A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7A86E0301A96969D008A148A /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		7A86E0331A969878008A148A /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		7ADE29351AC88C35000E6782 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		7ADE29371AC890A1000E6782 /* level-one.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-one.sks"; sourceTree = "<group>"; };
+		7ADE29391AC89BE8000E6782 /* level-two.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-two.sks"; sourceTree = "<group>"; };
+		7ADE293B1AC89BF8000E6782 /* level-three.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-three.sks"; sourceTree = "<group>"; };
+		7ADE293D1AC89CE3000E6782 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		7ADE293F1AC8A399000E6782 /* TestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestScene.sks; sourceTree = "<group>"; };
+		7ADE29401AC8A399000E6782 /* TestScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScene.swift; sourceTree = "<group>"; };
 		9881561E1AB7938000E8AB7A /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		988156201AB7963B00E8AB7A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		988156221AB799C400E8AB7A /* trampoline.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trampoline.jpg; sourceTree = "<group>"; };
@@ -151,11 +157,10 @@
 		7A86E0031A968BC5008A148A /* Jumper */ = {
 			isa = PBXGroup;
 			children = (
+				7ADE29431AC8A3BB000E6782 /* Users */,
 				7A86E00E1A968BC5008A148A /* Main.storyboard */,
 				7A86E0061A968BC5008A148A /* AppDelegate.swift */,
 				7A86E0301A96969D008A148A /* MainMenuViewController.swift */,
-				7A86E0331A969878008A148A /* SignInViewController.swift */,
-				7A86E02E1A969628008A148A /* SignUpViewController.swift */,
 				7A86E00C1A968BC5008A148A /* GameViewController.swift */,
 				9881561E1AB7938000E8AB7A /* GameObject.swift */,
 				988156201AB7963B00E8AB7A /* Player.swift */,
@@ -199,13 +204,25 @@
 		7A86E0321A9696BD008A148A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7ADE293F1AC8A399000E6782 /* TestScene.sks */,
+				7ADE29401AC8A399000E6782 /* TestScene.swift */,
+				7ADE29351AC88C35000E6782 /* Level.swift */,
+				7ADE293D1AC89CE3000E6782 /* Scene.swift */,
 				988156281AB79C2700E8AB7A /* DemoLevel.swift */,
-				7A86E00A1A968BC5008A148A /* GameScene.swift */,
-				7A86E0081A968BC5008A148A /* GameScene.sks */,
-				7A86E02C1A96916A008A148A /* TestScene.swift */,
-				7A86E02A1A9690E4008A148A /* TestScene.sks */,
+				7ADE29371AC890A1000E6782 /* level-one.sks */,
+				7ADE29391AC89BE8000E6782 /* level-two.sks */,
+				7ADE293B1AC89BF8000E6782 /* level-three.sks */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		7ADE29431AC8A3BB000E6782 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				7A86E0331A969878008A148A /* SignInViewController.swift */,
+				7A86E02E1A969628008A148A /* SignUpViewController.swift */,
+			);
+			name = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,13 +305,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ADE29381AC890A1000E6782 /* level-one.sks in Resources */,
+				7ADE293C1AC89BF8000E6782 /* level-three.sks in Resources */,
 				7A86E0151A968BC5008A148A /* LaunchScreen.xib in Resources */,
 				988156261AB799C400E8AB7A /* kitten.jpg in Resources */,
+				7ADE293A1AC89BE8000E6782 /* level-two.sks in Resources */,
 				7A86E0121A968BC5008A148A /* Images.xcassets in Resources */,
 				988156271AB799C400E8AB7A /* brick.jpg in Resources */,
-				7A86E0091A968BC5008A148A /* GameScene.sks in Resources */,
-				7A86E02B1A9690E4008A148A /* TestScene.sks in Resources */,
 				988156251AB799C400E8AB7A /* trampoline.jpg in Resources */,
+				7ADE29411AC8A399000E6782 /* TestScene.sks in Resources */,
 				7A86E0101A968BC5008A148A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,14 +334,15 @@
 			files = (
 				7A86E0341A969878008A148A /* SignInViewController.swift in Sources */,
 				7A86E0311A96969D008A148A /* MainMenuViewController.swift in Sources */,
-				7A86E00B1A968BC5008A148A /* GameScene.swift in Sources */,
-				7A86E02D1A96916A008A148A /* TestScene.swift in Sources */,
+				7ADE293E1AC89CE3000E6782 /* Scene.swift in Sources */,
 				9881561F1AB7938000E8AB7A /* GameObject.swift in Sources */,
 				7A86E00D1A968BC5008A148A /* GameViewController.swift in Sources */,
 				7A86E0071A968BC5008A148A /* AppDelegate.swift in Sources */,
 				988156211AB7963B00E8AB7A /* Player.swift in Sources */,
 				7A86E02F1A969628008A148A /* SignUpViewController.swift in Sources */,
 				988156291AB79C2700E8AB7A /* DemoLevel.swift in Sources */,
+				7ADE29421AC8A399000E6782 /* TestScene.swift in Sources */,
+				7ADE29361AC88C35000E6782 /* Level.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@ import Parse
 
 class MainMenuViewController: UIViewController {
     
-    
+    @IBOutlet var currentLevelLabel: UILabel!
     @IBOutlet var userLabel: UILabel!
     @IBOutlet var startButton: UIButton!
     @IBOutlet var signUpButton: UIButton!
@@ -20,29 +20,51 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         userUpdated()
+        self.view.setNeedsUpdateConstraints()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        userUpdated()
+        self.view.setNeedsUpdateConstraints()
     }
     
     func userUpdated () {
         var user = PFUser.currentUser()
-        if user != nil {
-            self.userLabel.text = NSString(format: "Current User: %@", user.username)
-            self.signInButton.hidden = true
-            self.signUpButton.hidden = true
-            self.startButton.hidden = false
-            self.signOutButton.hidden = false
+        
+        if (user != nil) {
+            user.fetchInBackgroundWithBlock { (fetchedUser, error) -> Void in
+                if (error == nil) {
+                    let currentLevel:NSNumber = user["currentLevel"] as NSNumber
+                    
+                    self.userLabel.text = NSString(format: "Current User: %@", user.username)
+                    self.currentLevelLabel.text = NSString(format: "Current Level: %@", currentLevel)
+                    self.signInButton.hidden = true
+                    self.signUpButton.hidden = true
+                    self.startButton.hidden = false
+                    self.signOutButton.hidden = false
+                    
+                    self.view.setNeedsUpdateConstraints()
+                } else {
+                    println(error)
+                    return
+                }
+            }
         } else {
             
             self.userLabel.text = "No Current User"
+            self.currentLevelLabel.text = ""
             self.signInButton.hidden = false
             self.signUpButton.hidden = false
             self.startButton.hidden = true
             self.signOutButton.hidden = true
+            
+            self.view.setNeedsUpdateConstraints()
         }
     }
     
-    @IBAction func startButtonPressed(sender: UIButton) {}
+    @IBAction func startButtonPressed(sender: UIButton) { }
     @IBAction func signUpButtonPressed(sender: UIButton) {}
     @IBAction func signInButtonPressed(sender: UIButton) {}
     @IBAction func signOutButtonPressed(sender: UIButton) {
@@ -58,8 +80,7 @@ class MainMenuViewController: UIViewController {
         }
     }
     
-    @IBAction func backToMainMenu(segue:UIStoryboardSegue) { NSLog("back to main menu") }
-    
+    @IBAction func backToMainMenu(segue:UIStoryboardSegue) {}
     @IBAction func submitNewAccount(segue:UIStoryboardSegue) {
         
         let source: SignUpViewController = segue.sourceViewController as SignUpViewController
@@ -71,6 +92,7 @@ class MainMenuViewController: UIViewController {
             var newUser = PFUser()
             newUser.username = inputUsername
             newUser.password = inputPassword
+            newUser["currentLevel"] = 1
             
             newUser.signUpInBackgroundWithBlock({ (success, error) -> Void in
                 if (success) {
