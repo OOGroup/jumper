@@ -63,7 +63,7 @@ class Scene: SKScene, SKPhysicsContactDelegate {
             if body.node!.name == PlayerCategoryName {
                 let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
                 
-                // Random touches
+                // Random vector components
 //                let vx = CGFloat(arc4random() % 2000) - 1000
 //                let vy = CGFloat(arc4random() % 1000)
                 
@@ -71,16 +71,16 @@ class Scene: SKScene, SKPhysicsContactDelegate {
                 let vy = (player.frame.midY - touchLocation.y) * 30
                 
                 
-                println("apply impulse to player: (\(vx), \(vy))")
+                // println("apply impulse to player: (\(vx), \(vy))")
                 player.physicsBody!.applyImpulse(CGVector(dx: vx, dy: vy))
             }
         }
     }
     
     
-    
     /* SKPhysicsContactDelegate */
     func didBeginContact(contact: SKPhysicsContact) {
+        
         // Create local variables for two physics bodies
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
