@@ -14,10 +14,12 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     let PlayerCategoryName = "player"
     let BottomCategoryName = "bottom"
     let WallCategoryName = "wall"
+    let GoalCategoryName = "goal"
     
     let PlayerCategory  : UInt32 = 0x1 << 0
     let BottomCategory  : UInt32 = 0x1 << 1
     let WallCategory    : UInt32 = 0x1 << 2
+    let GoalCategory    : UInt32 = 0x1 << 3
     
     var player: SKSpriteNode?
     
@@ -27,6 +29,7 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         super.init(coder: aDecoder)
     }
     
+    /* Did Move to View */
     override func didMoveToView(view: SKView) {
         
         // Create a physics body that borders the screen (minus the 10px ground)
@@ -38,17 +41,17 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
         let wall = childNodeWithName(WallCategoryName) as SKSpriteNode!
         let bottom = childNodeWithName(BottomCategoryName) as SKSpriteNode!
+        let goal = childNodeWithName(GoalCategoryName) as SKSpriteNode!
         
         
         wall.physicsBody!.categoryBitMask = WallCategory
         player.physicsBody!.categoryBitMask = PlayerCategory
         bottom.physicsBody!.categoryBitMask = BottomCategory
+        goal.physicsBody!.categoryBitMask = GoalCategory
         
-        player.physicsBody!.contactTestBitMask = WallCategory | BottomCategory
+        player.physicsBody!.contactTestBitMask = WallCategory | BottomCategory | GoalCategory
         
         physicsWorld.contactDelegate = self
-        
-//        player.physicsBody!.applyImpulse(CGVector(dx: 200, dy: 200))
 
     }
     
@@ -60,10 +63,15 @@ class Scene: SKScene, SKPhysicsContactDelegate {
             if body.node!.name == PlayerCategoryName {
                 let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
                 
-                let vx = CGFloat(arc4random() % 2000) - 1000
-                let vy = CGFloat(arc4random() % 1000)
+                // Random touches
+//                let vx = CGFloat(arc4random() % 2000) - 1000
+//                let vy = CGFloat(arc4random() % 1000)
+                
+                let vx = (player.frame.midX - touchLocation.x) * 30
+                let vy = (player.frame.midY - touchLocation.y) * 30
                 
                 
+                println("apply impulse to player: (\(vx), \(vy))")
                 player.physicsBody!.applyImpulse(CGVector(dx: vx, dy: vy))
             }
         }
@@ -73,11 +81,11 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     
     /* SKPhysicsContactDelegate */
     func didBeginContact(contact: SKPhysicsContact) {
-        // 1. Create local variables for two physics bodies
+        // Create local variables for two physics bodies
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
         
-        // 2. Assign the two physics bodies so that the one with the lower category is always stored in firstBody
+        // Assign the two physics bodies so that the one with the lower category is always stored in firstBody
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
             firstBody = contact.bodyA
             secondBody = contact.bodyB
@@ -86,11 +94,21 @@ class Scene: SKScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
-        // 3. react to the contact between ball and bottom
-        if firstBody.categoryBitMask == PlayerCategory && secondBody.categoryBitMask == WallCategory {
-            println("Hit wall.")
-        } else if firstBody.categoryBitMask == PlayerCategory && secondBody.categoryBitMask == BottomCategory {
-            println("Hit bottom.")
+        // Collision Testing for Player
+        if (firstBody.categoryBitMask == PlayerCategory) {
+            switch secondBody.categoryBitMask {
+                case WallCategory:
+                    println("Hit wall.")
+                    break;
+                case BottomCategory:
+                    println("Hit bottom.")
+                    break;
+                case GoalCategory:
+                    println("YOU WIN!")
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
