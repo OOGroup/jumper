@@ -1,5 +1,8 @@
 # jumper
 http://www.gamefromscratch.com/post/2014/06/03/Game-development-tutorial-Swift-and-SpriteKit-Part-1-A-Simple-iOSMac-OS-App.aspx
+http://www.raywenderlich.com/84341/create-breakout-game-sprite-kit-swift
+
+
 Getting Started (New iOS Version)
 ---------------
   From this directory:
