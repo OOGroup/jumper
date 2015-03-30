@@ -48,11 +48,30 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         
         physicsWorld.contactDelegate = self
         
-        player.physicsBody!.applyImpulse(CGVector(dx: 10, dy: -10))
+//        player.physicsBody!.applyImpulse(CGVector(dx: 200, dy: 200))
 
     }
     
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        var touch = touches.anyObject() as UITouch!
+        var touchLocation = touch.locationInNode(self)
+        
+        if let body = physicsWorld.bodyAtPoint(touchLocation) {
+            if body.node!.name == PlayerCategoryName {
+                let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
+                
+                let vx = CGFloat(arc4random() % 2000) - 1000
+                let vy = CGFloat(arc4random() % 1000)
+                
+                
+                player.physicsBody!.applyImpulse(CGVector(dx: vx, dy: vy))
+            }
+        }
+    }
     
+    
+    
+    /* SKPhysicsContactDelegate */
     func didBeginContact(contact: SKPhysicsContact) {
         // 1. Create local variables for two physics bodies
         var firstBody: SKPhysicsBody
