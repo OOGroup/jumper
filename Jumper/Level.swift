@@ -6,4 +6,23 @@
 //  Copyright (c) 2015 OOGroup. All rights reserved.
 //
 
-import Foundation
+import AVFoundation
+import SpriteKit
+
+class Level {
+
+    var sceneFile: NSString = ""
+    
+    /* Init Methods */
+    init(sceneFile: NSString) {
+        self.sceneFile = sceneFile
+        
+        
+    }
+    init() {}
+    
+    
+    
+    
+    
+}

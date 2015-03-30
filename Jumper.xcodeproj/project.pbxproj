@@ -164,6 +164,7 @@
 				7A86E00C1A968BC5008A148A /* GameViewController.swift */,
 				9881561E1AB7938000E8AB7A /* GameObject.swift */,
 				988156201AB7963B00E8AB7A /* Player.swift */,
+				7ADE29351AC88C35000E6782 /* Level.swift */,
 				7A86E0321A9696BD008A148A /* Scenes */,
 				7A86E0111A968BC5008A148A /* Images.xcassets */,
 				7A86E0131A968BC5008A148A /* LaunchScreen.xib */,
@@ -206,9 +207,8 @@
 			children = (
 				7ADE293F1AC8A399000E6782 /* TestScene.sks */,
 				7ADE29401AC8A399000E6782 /* TestScene.swift */,
-				7ADE29351AC88C35000E6782 /* Level.swift */,
-				7ADE293D1AC89CE3000E6782 /* Scene.swift */,
 				988156281AB79C2700E8AB7A /* DemoLevel.swift */,
+				7ADE293D1AC89CE3000E6782 /* Scene.swift */,
 				7ADE29371AC890A1000E6782 /* level-one.sks */,
 				7ADE29391AC89BE8000E6782 /* level-two.sks */,
 				7ADE293B1AC89BF8000E6782 /* level-three.sks */,
