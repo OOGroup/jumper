@@ -28,56 +28,78 @@ extension SKNode {
 
 class GameViewController: UIViewController {
     
+    /* Instance Variables */
+    let sceneFiles = []
+    let levels = [
+        Level(sceneFile: "level-one"),
+        Level(sceneFile: "level-two"),
+        Level(sceneFile: "level-three")
+    ]
+    var user = PFUser.currentUser()
     
+    /* Init Methods */
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        configureLevels(self.levels)
+    }
+    
+    /* View Will Appear */
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let user:PFUser = PFUser.currentUser()
-        let currentLevel = user["currentLevel"] as NSInteger
+        let currentLevelIndex = user["currentLevel"] as NSInteger
+        let currentLevel: Level = self.levels[currentLevelIndex-1]
 
+        
         loadLevel(currentLevel)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
-    func loadLevel( level:NSInteger ) {
-        
-        var sceneFile:NSString
-        
-        switch (level) {
-        case 1:
-            sceneFile = "level-one"
-        case 2:
-            sceneFile = "level-two"
-        case 3:
-            sceneFile = "level-three"
-        default:
-            return
-        }
-        
-        if let scene = Scene.unarchiveFromFile(sceneFile) as? Scene {
-            let skView = self.view as SKView
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
-            
-            print("rendered level: ")
+    /* Configure levels */
+    func configureLevels( levels:NSArray ) {
+        for level in levels {
             println(level)
         }
     }
 
-   
+    
+    /* Load and Present a Given Level */
+    func loadLevel( level: Level ) {
+        
+        // Load Scene from scenefile
+        if let scene = Scene.unarchiveFromFile(level.sceneFile) as? Scene {
+            
+            NSLog("%@", scene)
+            
+            scene.scaleMode = .AspectFill
+            
+            // Present Scene
+            let skView = self.view as SKView
+            skView.ignoresSiblingOrder = true
+            skView.presentScene(scene)
+            
+            
 
+            // DEBUG
+//            print("rendered level: ")
+//            println(level)
+        } else {
+            NSLog("In loadLevel: Unable to unarchive Scene from file: %@", level.sceneFile)
+        }
+    }
+
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Default View Setup Methods*/
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+            return Int(UIInterfaceOrientationMask.Landscape.rawValue)
         } else {
             return Int(UIInterfaceOrientationMask.All.rawValue)
         }
