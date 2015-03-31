@@ -3,10 +3,12 @@ General Process
 ---------------
 1. As features come up, add them into the [Waffle](https://waffle.io/oogroup/jumper)
 2. Be sure to be as descriptive as possible in Waffle. Especially if you aren't the one implementing the feature.
+
 ####In Waffle:
 3. Press `Add Issue` to create a card for a feature
 4. New cards go into `Backlog`, move them to `Ready` when they are fully described. Labels are cool :)
 5. When you start work on an issue, assign yourself to the card and move it to `In Progress`
+
 ####In command line:
 6. `git pull origin master` inside the root directory
 7. `git checkout -b <branchname>` to create and checkout a new branch. If you are Paul, it is helpful to name your branches like: `paul-feature-name`
@@ -15,6 +17,7 @@ General Process
 To do a pull request
 --------------------
 1. `git push origin paul-feature-name` with the most up-to-date version of your code
+
 ####In GitHub:
 2. There should be a message about a newly pushed branch and a green button that says something like `Create New Pull Request` If not, check to be sure your push to origin succeeded
 3. Change the title of the pull request to something like: `Resolves #18 // Implemented user` with the `#18` coming from the number of the issue (either Waffle card number or on github)
