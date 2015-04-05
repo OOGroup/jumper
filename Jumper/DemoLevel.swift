@@ -10,11 +10,15 @@ import AVFoundation
 import SpriteKit
 
 class DemoLevel: SKScene, SKPhysicsContactDelegate {
-    private var player: SKSpriteNode!
-    required init?(coder aDecoder: NSCoder) {
+    //private var player: SKSpriteNode!
 
-        //let player = SKSpriteNode(imageNamed: p.fileName)
-        fatalError("init(coder:) has not been implemented")
+    //var p: Player = Player()
+    var player = SKSpriteNode(imageNamed: Player().fileName)
+    
+    
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
     override func didMoveToView(view: SKView) {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Player{
+class Player {
     let fileName = "kitten.jpg"
     var moving = false
 }
