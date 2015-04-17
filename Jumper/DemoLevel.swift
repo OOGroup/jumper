@@ -10,10 +10,13 @@ import AVFoundation
 import SpriteKit
 
 class DemoLevel: SKScene, SKPhysicsContactDelegate {
+    //private var player: SKSpriteNode!
+
     //var p: Player = Player()
     var player = SKSpriteNode(imageNamed: Player().fileName)
     
     
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

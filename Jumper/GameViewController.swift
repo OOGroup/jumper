@@ -33,7 +33,9 @@ class GameViewController: UIViewController {
     let levels = [
         Level(sceneFile: "level-one"),
         Level(sceneFile: "level-two"),
-        Level(sceneFile: "level-three")
+        Level(sceneFile: "level-three"),
+        Level(sceneFile: "level-four"),
+        Level(sceneFile: "level-five")
     ]
     var user = PFUser.currentUser()
     
@@ -48,7 +50,7 @@ class GameViewController: UIViewController {
         super.viewWillAppear(animated)
         
         let currentLevelIndex = user["currentLevel"] as NSInteger
-        let currentLevel: Level = self.levels[currentLevelIndex-1]
+        let currentLevel: Level = self.levels[currentLevelIndex+3]
 
         
         loadLevel(currentLevel)
