@@ -8,6 +8,7 @@
 
 import AVFoundation
 import SpriteKit
+import Darwin
 
 class Scene: SKScene, SKPhysicsContactDelegate {
     
@@ -24,12 +25,14 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     var player: SKSpriteNode?
     var xi: CGFloat = 0.0
     var yi: CGFloat = 0.0
+    var xp: CGFloat = 0.0
+    var yp: CGFloat = 0.0
+    var xp2: CGFloat = 0.0
+    var yp2: CGFloat = 0.0
     var lock = 0
     
     lazy var lineNode: SKShapeNode = SKShapeNode()
     var pathToDraw: CGMutablePathRef = CGPathCreateMutable()
-    
-    
     
     /* Init Methods */
     required init?(coder aDecoder: NSCoder) {
@@ -71,26 +74,18 @@ class Scene: SKScene, SKPhysicsContactDelegate {
             if body.node!.name == PlayerCategoryName {
                 let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
                 
-                // Random vector components
-//                let vx = CGFloat(arc4random() % 2000) - 1000
-//                let vy = CGFloat(arc4random() % 1000)
-                
-                //let vx = (player.frame.midX - touchLocation.x) * 20
-                //let vy = (player.frame.midY - touchLocation.y) * 20
-                
                 pathToDraw = CGPathCreateMutable()
                 CGPathMoveToPoint(pathToDraw, nil, touchLocation.x, touchLocation.y)
+                CGPathAddLineToPoint(pathToDraw, nil, touchLocation.x+0.01, touchLocation.y+0.01)
                 lineNode = SKShapeNode()
                 lineNode.path = pathToDraw
-                //lineNode.lineWidth = 20
+                lineNode.lineWidth = 15
                 lineNode.strokeColor = SKColor.redColor()
                 addChild(lineNode)
                 
                 xi = touchLocation.x
                 yi = touchLocation.y
                 lock = 1
-                // println("apply impulse to player: (\(vx), \(vy))")
-                //player.physicsBody!.applyImpulse(CGVector(dx: vx, dy: vy))
             }
         }
     }
@@ -101,6 +96,8 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
         let vx = (touchLocation.x - xi)
         let vy = (touchLocation.y - yi)
+        let actionMoveDone = SKAction.removeFromParent()
+        lineNode.runAction(actionMoveDone)
         if lock == 1 {
             player.physicsBody!.applyImpulse(CGVector(dx: vx, dy: vy))
             lock = 0
@@ -111,8 +108,9 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         var touch = touches.anyObject() as UITouch!
         var touchLocation = touch.locationInNode(self)
-        //CGPathAddLineToPoint(pathToDraw, nil, touchLocation.x, touchLocation.y)
-        CGPathMoveToPoint(pathToDraw, nil, touchLocation.x, touchLocation.y)
+        pathToDraw = CGPathCreateMutable()
+        CGPathMoveToPoint(pathToDraw, nil, xi, yi)
+        CGPathAddLineToPoint(pathToDraw, nil, touchLocation.x, touchLocation.y)
         lineNode.path = pathToDraw
     }
     
