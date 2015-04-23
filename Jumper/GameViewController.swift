@@ -26,7 +26,7 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, LevelDelegate {
     
     /* Instance Variables */
     let sceneFiles = []
@@ -39,6 +39,8 @@ class GameViewController: UIViewController {
     ]
     var user = PFUser.currentUser()
     
+    
+    
     /* Init Methods */
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -50,8 +52,7 @@ class GameViewController: UIViewController {
         super.viewWillAppear(animated)
         
         let currentLevelIndex = user["currentLevel"] as! NSInteger
-        let currentLevel: Level = self.levels[currentLevelIndex+3]
-
+        let currentLevel: Level = self.levels[currentLevelIndex]
         
         loadLevel(currentLevel)
     }
@@ -59,7 +60,7 @@ class GameViewController: UIViewController {
     /* Configure levels */
     func configureLevels( levels:NSArray ) {
         for level in levels {
-            println(level)
+            (level as! Level).levelDelegate = self
         }
     }
 
@@ -67,37 +68,40 @@ class GameViewController: UIViewController {
     /* Load and Present a Given Level */
     func loadLevel( level: Level ) {
         
-        // Load Scene from scenefile
-        if let scene = Scene.unarchiveFromFile(level.sceneFile) as? Scene {
-            
-            NSLog("%@", scene)
-            
-            scene.scaleMode = .AspectFill
+        if (level.scene != nil) {
             
             // Present Scene
             let skView = self.view as! SKView
             skView.ignoresSiblingOrder = true
-            skView.presentScene(scene)
+            skView.presentScene(level.scene!)
             
-            
-
-            // DEBUG
-//            print("rendered level: ")
-//            println(level)
         } else {
             NSLog("In loadLevel: Unable to unarchive Scene from file: %@", level.sceneFile)
         }
     }
+    
+    /*
+    * Level Delegate
+    */
+    func levelDidComplete() {
+        let currentLevelIndex = user["currentLevel"] as! NSInteger
+        let nextLevelIndex = currentLevelIndex + 1
+        user["currentLevel"] = nextLevelIndex
+        
+        user.saveInBackgroundWithBlock { (success, error) -> Void in
+            if (!success) {
+                NSLog("Error saving user", error)
+            }
+        }
+        
+        if (nextLevelIndex < levels.count) {
+            let nextLevel: Level = self.levels[nextLevelIndex]
+            loadLevel(nextLevel)
+        } else {
+            NSLog("Game over!")
+        }
+    }
 
-   
-    
-    
-    
-    
-    
-    
-    
-    
     /* Default View Setup Methods*/
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {

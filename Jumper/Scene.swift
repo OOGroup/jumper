@@ -10,7 +10,13 @@ import AVFoundation
 import SpriteKit
 import Darwin
 
+protocol SceneDelegate {
+    func goalReached()
+}
+
 class Scene: SKScene, SKPhysicsContactDelegate {
+    
+    var sceneDelegate: SceneDelegate?
     
     let PlayerCategoryName = "player"
     let BottomCategoryName = "bottom"
@@ -143,11 +149,16 @@ class Scene: SKScene, SKPhysicsContactDelegate {
                     println("Hit bottom.")
                     break;
                 case GoalCategory:
-                    println("YOU WIN!")
+                    testFinish()
                     break;
                 default:
                     break;
             }
         }
+    }
+    
+    func testFinish () {
+        println("YOU WIN!")
+        self.sceneDelegate?.goalReached()
     }
 }
