@@ -12,12 +12,12 @@ import Parse
 
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
-        if let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
+        if let path = NSBundle.mainBundle().pathForResource(file as String, ofType: "sks") {
             var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
             var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
             
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as Scene
+            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! Scene
             archiver.finishDecoding()
             return scene
         } else {
@@ -49,7 +49,7 @@ class GameViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let currentLevelIndex = user["currentLevel"] as NSInteger
+        let currentLevelIndex = user["currentLevel"] as! NSInteger
         let currentLevel: Level = self.levels[currentLevelIndex+3]
 
         
@@ -75,7 +75,7 @@ class GameViewController: UIViewController {
             scene.scaleMode = .AspectFill
             
             // Present Scene
-            let skView = self.view as SKView
+            let skView = self.view as! SKView
             skView.ignoresSiblingOrder = true
             skView.presentScene(scene)
             
