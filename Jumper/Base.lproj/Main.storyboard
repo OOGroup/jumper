@@ -303,25 +303,21 @@
         <!--Levels-->
         <scene sceneID="Vbk-wW-nN0">
             <objects>
-                <tableViewController id="tGy-of-7WX" sceneMemberID="viewController">
+                <tableViewController id="tGy-of-7WX" customClass="LevelViewController" customModule="Jumper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kmo-jN-whx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OBG-Ps-Svp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" id="Ghh-md-HFG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBG-Ps-Svp" id="Zrj-pD-vvL">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ghh-md-HFG" id="Jsf-yv-BcX">
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7v-0E-lDo">
-                                            <rect key="frame" x="-8" y="-1" width="600" height="44"/>
-                                            <items>
-                                                <navigationItem title="Home" id="Vjw-Md-Rrp"/>
-                                            </items>
-                                        </navigationBar>
-                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="LVB-YS-i5n" kind="presentation" modalPresentationStyle="fullScreen" animates="NO" id="5dt-vJ-WDG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -333,7 +329,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XtG-Th-Yke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2032" y="1371"/>
+            <point key="canvasLocation" x="1533" y="-1668"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ze2-g6-log">
@@ -356,7 +352,7 @@
                     </items>
                 </navigationBar>
             </objects>
-            <point key="canvasLocation" x="982" y="1362"/>
+            <point key="canvasLocation" x="857" y="-1630"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="K5h-1y-AmX">
@@ -442,4 +438,7 @@
             <point key="canvasLocation" x="2045" y="572"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5dt-vJ-WDG"/>
+    </inferredMetricsTieBreakers>
 </document>

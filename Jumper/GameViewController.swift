@@ -30,6 +30,7 @@ class GameViewController: UIViewController {
     
     /* Instance Variables */
     let sceneFiles = []
+    var current = Level(sceneFile: "level-three")
     let levels = [
         Level(sceneFile: "level-one"),
         Level(sceneFile: "level-two"),
@@ -48,7 +49,8 @@ class GameViewController: UIViewController {
     /* View Will Appear */
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        //let currentLevelIndex = user[current] as NSInteger
+            //as NSInteger
         let currentLevelIndex = user["currentLevel"] as NSInteger
         let currentLevel: Level = self.levels[currentLevelIndex+3]
 

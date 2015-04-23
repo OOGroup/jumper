@@ -35,7 +35,7 @@
 		7ADE293E1AC89CE3000E6782 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE293D1AC89CE3000E6782 /* Scene.swift */; };
 		7ADE29411AC8A399000E6782 /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE293F1AC8A399000E6782 /* TestScene.sks */; };
 		7ADE29421AC8A399000E6782 /* TestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE29401AC8A399000E6782 /* TestScene.swift */; };
-		9806372A1ADC80AA00841A94 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980637291ADC80AA00841A94 /* LevelView.swift */; };
+		986677D81AE9834500626522 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986677D71AE9834500626522 /* LevelViewController.swift */; };
 		9881561F1AB7938000E8AB7A /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881561E1AB7938000E8AB7A /* GameObject.swift */; };
 		988156211AB7963B00E8AB7A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988156201AB7963B00E8AB7A /* Player.swift */; };
 		988156251AB799C400E8AB7A /* trampoline.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 988156221AB799C400E8AB7A /* trampoline.jpg */; };
@@ -87,7 +87,7 @@
 		7ADE293D1AC89CE3000E6782 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		7ADE293F1AC8A399000E6782 /* TestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestScene.sks; sourceTree = "<group>"; };
 		7ADE29401AC8A399000E6782 /* TestScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestScene.swift; sourceTree = "<group>"; };
-		980637291ADC80AA00841A94 /* LevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
+		986677D71AE9834500626522 /* LevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
 		9881561E1AB7938000E8AB7A /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		988156201AB7963B00E8AB7A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		988156221AB799C400E8AB7A /* trampoline.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trampoline.jpg; sourceTree = "<group>"; };
@@ -165,6 +165,7 @@
 			children = (
 				7ADE29431AC8A3BB000E6782 /* Users */,
 				7A86E00E1A968BC5008A148A /* Main.storyboard */,
+				986677D71AE9834500626522 /* LevelViewController.swift */,
 				7A86E0061A968BC5008A148A /* AppDelegate.swift */,
 				7A86E0301A96969D008A148A /* MainMenuViewController.swift */,
 				7A86E00C1A968BC5008A148A /* GameViewController.swift */,
@@ -229,7 +230,6 @@
 			children = (
 				7A86E0331A969878008A148A /* SignInViewController.swift */,
 				7A86E02E1A969628008A148A /* SignUpViewController.swift */,
-				980637291ADC80AA00841A94 /* LevelView.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -344,8 +344,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A86E0341A969878008A148A /* SignInViewController.swift in Sources */,
-				9806372A1ADC80AA00841A94 /* LevelView.swift in Sources */,
 				7A86E0311A96969D008A148A /* MainMenuViewController.swift in Sources */,
+				986677D81AE9834500626522 /* LevelViewController.swift in Sources */,
 				7ADE293E1AC89CE3000E6782 /* Scene.swift in Sources */,
 				9881561F1AB7938000E8AB7A /* GameObject.swift in Sources */,
 				7A86E00D1A968BC5008A148A /* GameViewController.swift in Sources */,
