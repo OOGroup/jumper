@@ -50,7 +50,7 @@ class GameViewController: UIViewController {
         super.viewWillAppear(animated)
         
         let currentLevelIndex = user["currentLevel"] as NSInteger
-        let currentLevel: Level = self.levels[currentLevelIndex+3]
+        let currentLevel: Level = self.levels[currentLevelIndex]
 
         
         loadLevel(currentLevel)

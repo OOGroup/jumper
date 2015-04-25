@@ -16,6 +16,7 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     let BottomCategoryName = "bottom"
     let WallCategoryName = "wall"
     let GoalCategoryName = "goal"
+    let TrampCategoryName = "tramp"
     
     let PlayerCategory  : UInt32 = 0x1 << 0
     let BottomCategory  : UInt32 = 0x1 << 1
@@ -25,11 +26,12 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     var player: SKSpriteNode?
     var xi: CGFloat = 0.0
     var yi: CGFloat = 0.0
-    var xp: CGFloat = 0.0
-    var yp: CGFloat = 0.0
-    var xp2: CGFloat = 0.0
-    var yp2: CGFloat = 0.0
+    var original: CGPoint = CGPoint()
     var lock = 0
+    var flag = 0
+    var numFlicks = 0
+    var numResets = 0
+    
     
     lazy var lineNode: SKShapeNode = SKShapeNode()
     var pathToDraw: CGMutablePathRef = CGPathCreateMutable()
@@ -53,14 +55,14 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         let wall = childNodeWithName(WallCategoryName) as SKSpriteNode!
         let bottom = childNodeWithName(BottomCategoryName) as SKSpriteNode!
         let goal = childNodeWithName(GoalCategoryName) as SKSpriteNode!
-        
+        original = player.position
         
         wall.physicsBody!.categoryBitMask = WallCategory
         player.physicsBody!.categoryBitMask = PlayerCategory
         bottom.physicsBody!.categoryBitMask = BottomCategory
         goal.physicsBody!.categoryBitMask = GoalCategory
         
-        player.physicsBody!.contactTestBitMask = WallCategory | BottomCategory | GoalCategory
+        player.physicsBody!.contactTestBitMask = WallCategory | BottomCategory | GoalCategory 
         
         physicsWorld.contactDelegate = self
 
@@ -73,7 +75,6 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         if let body = physicsWorld.bodyAtPoint(touchLocation) {
             if body.node!.name == PlayerCategoryName {
                 let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
-                
                 pathToDraw = CGPathCreateMutable()
                 CGPathMoveToPoint(pathToDraw, nil, touchLocation.x, touchLocation.y)
                 CGPathAddLineToPoint(pathToDraw, nil, touchLocation.x+0.01, touchLocation.y+0.01)
@@ -86,6 +87,9 @@ class Scene: SKScene, SKPhysicsContactDelegate {
                 xi = touchLocation.x
                 yi = touchLocation.y
                 lock = 1
+            }
+            else if body.node!.name == TrampCategoryName {
+                lock = 2
             }
         }
     }
@@ -100,6 +104,10 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         lineNode.runAction(actionMoveDone)
         if lock == 1 {
             player.physicsBody!.applyImpulse(CGVector(dx: vx, dy: vy))
+            numFlicks += 1
+            lock = 0
+        }
+        else if lock == 2 {
             lock = 0
         }
         
@@ -108,12 +116,26 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         var touch = touches.anyObject() as UITouch!
         var touchLocation = touch.locationInNode(self)
-        pathToDraw = CGPathCreateMutable()
-        CGPathMoveToPoint(pathToDraw, nil, xi, yi)
-        CGPathAddLineToPoint(pathToDraw, nil, touchLocation.x, touchLocation.y)
-        lineNode.path = pathToDraw
+        if lock == 1 {
+            pathToDraw = CGPathCreateMutable()
+            CGPathMoveToPoint(pathToDraw, nil, xi, yi)
+            CGPathAddLineToPoint(pathToDraw, nil, touchLocation.x, touchLocation.y)
+            lineNode.path = pathToDraw
+        }
+        else if lock == 2 {
+            let tramp = childNodeWithName(TrampCategoryName) as SKSpriteNode!
+            tramp.position = touchLocation
+        }
     }
     
+    override func update(currentTime: NSTimeInterval) {
+        if flag == 1 {
+            let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
+            player.runAction(SKAction.removeFromParent())
+            setUpPlayer()
+            flag = 0
+        }
+    }
     
     /* SKPhysicsContactDelegate */
     func didBeginContact(contact: SKPhysicsContact) {
@@ -138,7 +160,8 @@ class Scene: SKScene, SKPhysicsContactDelegate {
                     println("Hit wall.")
                     break;
                 case BottomCategory:
-                    println("Hit bottom.")
+                    flag = 1
+                    println("Hit bottom")
                     break;
                 case GoalCategory:
                     println("YOU WIN!")
@@ -147,5 +170,15 @@ class Scene: SKScene, SKPhysicsContactDelegate {
                     break;
             }
         }
+    }
+    func setUpPlayer() {
+        let player = SKSpriteNode(imageNamed: "kitten.jpg")
+        player.name = "player"
+        player.position = original
+        player.size = CGSize(width: 100.0, height: 100.0)
+        player.physicsBody = SKPhysicsBody(rectangleOfSize:player.size)
+        player.physicsBody!.categoryBitMask = PlayerCategory
+        player.physicsBody!.contactTestBitMask = WallCategory | BottomCategory | GoalCategory
+        addChild(player)
     }
 }
