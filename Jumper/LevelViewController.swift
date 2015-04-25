@@ -47,10 +47,10 @@ class LevelViewController: UITableViewController, UITableViewDelegate
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "Load View") {
-            let GameViewController = segue.destinationViewController as UIViewController
+            let gameViewController = segue.destinationViewController as GameViewController
             let indexPath = self.tableView.indexPathForSelectedRow()!
             let selectedItem = self.items[indexPath.row]
-            //GameViewController.current = selectedItem
+            gameViewController.current = selectedItem
             //GameViewController.current = selectedItem
         }
     }

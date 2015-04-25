@@ -30,14 +30,15 @@ class GameViewController: UIViewController {
     
     /* Instance Variables */
     let sceneFiles = []
-    var current = Level(sceneFile: "level-three")
-    let levels = [
-        Level(sceneFile: "level-one"),
-        Level(sceneFile: "level-two"),
-        Level(sceneFile: "level-three"),
-        Level(sceneFile: "level-four"),
-        Level(sceneFile: "level-five")
-    ]
+    var current :AnyObject?
+    let levels = UIApplication.sharedApplication().delegate.levels
+//    let levels = [
+//        Level(sceneFile: "level-one"),
+//        Level(sceneFile: "level-two"),
+//        Level(sceneFile: "level-three"),
+//        Level(sceneFile: "level-four"),
+//        Level(sceneFile: "level-five")
+//    ]
     var user = PFUser.currentUser()
     
     /* Init Methods */
