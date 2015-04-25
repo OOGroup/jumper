@@ -40,10 +40,10 @@ class MainMenuViewController: UIViewController {
         if (user != nil) {
             user.fetchInBackgroundWithBlock { (fetchedUser, error) -> Void in
                 if (error == nil) {
-                    let currentLevel:NSNumber = user["currentLevel"] as NSNumber
+                    let currentLevel:NSNumber = user["currentLevel"] as! NSNumber
                     
-                    self.userLabel.text = NSString(format: "Current User: %@", user.username)
-                    self.currentLevelLabel.text = NSString(format: "Current Level: %@", currentLevel)
+                    self.userLabel.text = NSString(format: "Current User: %@", user.username) as String
+                    self.currentLevelLabel.text = NSString(format: "Current Level: %@", currentLevel) as String
                     self.signInButton.hidden = true
                     self.signUpButton.hidden = true
                     self.startButton.hidden = false
@@ -78,7 +78,7 @@ class MainMenuViewController: UIViewController {
         if((PFUser.currentUser()) != nil) {
             let username = PFUser.currentUser().username
             PFUser.logOut()
-            UIAlertView(title: "Logged Out", message: NSString(format: "%@ has logged out.", username), delegate: nil, cancelButtonTitle: "Okay").show()
+            UIAlertView(title: "Logged Out", message: NSString(format: "%@ has logged out.", username) as String, delegate: nil, cancelButtonTitle: "Okay").show()
             userUpdated()
  
         } else {
@@ -90,12 +90,12 @@ class MainMenuViewController: UIViewController {
     @IBAction func backToMainMenu(segue:UIStoryboardSegue) {}
     @IBAction func submitNewAccount(segue:UIStoryboardSegue) {
         
-        let source: SignUpViewController = segue.sourceViewController as SignUpViewController
-        let inputUsername: NSString = source.usernameTextField.text
-        let inputPassword: NSString = source.passwordTextField.text
-        let inputConfirm: NSString = source.confirmTextField.text
+        let source: SignUpViewController = segue.sourceViewController as! SignUpViewController
+        let inputUsername: String = source.usernameTextField.text
+        let inputPassword: String = source.passwordTextField.text
+        let inputConfirm: String = source.confirmTextField.text
         
-        if (inputPassword.isEqualToString(inputConfirm)) {
+        if (inputPassword == inputConfirm) {
             var newUser = PFUser()
             newUser.username = inputUsername
             newUser.password = inputPassword
@@ -104,11 +104,11 @@ class MainMenuViewController: UIViewController {
             newUser.signUpInBackgroundWithBlock({ (success, error) -> Void in
                 if (success) {
                     
-                    UIAlertView(title: "Success!", message: NSString(format: "Created new user: %@", inputUsername), delegate: nil, cancelButtonTitle: "Okay").show()
+                    UIAlertView(title: "Success!", message: String(format: "Created new user: %@", inputUsername), delegate: nil, cancelButtonTitle: "Okay").show()
                     self.userUpdated()
                     
                 } else {
-                    UIAlertView(title: "Error", message: NSString(format: "Error: %@", error), delegate: nil, cancelButtonTitle: "Okay").show()
+                    UIAlertView(title: "Error", message: String(format: "Error: %@", error), delegate: nil, cancelButtonTitle: "Okay").show()
                     self.userUpdated()
                 }
             })
@@ -121,17 +121,17 @@ class MainMenuViewController: UIViewController {
     
     @IBAction func logIn(segue:UIStoryboardSegue) {
         
-        let source: SignInViewController = segue.sourceViewController as SignInViewController
+        let source: SignInViewController = segue.sourceViewController as! SignInViewController
         let inputUsername: NSString = source.usernameTextField.text
         let inputPassword: NSString = source.passwordTextField.text
         
-        PFUser.logInWithUsernameInBackground(inputUsername, password: inputPassword) { (user:PFUser!, error:NSError!) -> Void in
+        PFUser.logInWithUsernameInBackground(inputUsername as String, password: inputPassword as String) { (user:PFUser!, error:NSError!) -> Void in
             if (error == nil) {
-                UIAlertView(title: "Success!", message: NSString(format: "Logged in as user: %@", inputUsername), delegate: nil, cancelButtonTitle: "Okay").show()
+                UIAlertView(title: "Success!", message: String(format: "Logged in as user: %@", inputUsername), delegate: nil, cancelButtonTitle: "Okay").show()
                 self.userUpdated()
 
             } else {
-                UIAlertView(title: "Error", message: NSString(format: "Error: %@", error), delegate: nil, cancelButtonTitle: "Okay").show()
+                UIAlertView(title: "Error", message: String(format: "Error: %@", error), delegate: nil, cancelButtonTitle: "Okay").show()
                 self.userUpdated()
             }
         }
