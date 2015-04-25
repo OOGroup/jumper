@@ -11,6 +11,10 @@ import Parse
 
 class MainMenuViewController: UIViewController {
     
+    
+//    let user = PFUser.currentUser()
+   
+    @IBOutlet weak var viewLevelsButton: UIButton!
     @IBOutlet var currentLevelLabel: UILabel!
     @IBOutlet var userLabel: UILabel!
     @IBOutlet var startButton: UIButton!
@@ -36,7 +40,7 @@ class MainMenuViewController: UIViewController {
         if (user != nil) {
             user.fetchInBackgroundWithBlock { (fetchedUser, error) -> Void in
                 if (error == nil) {
-                    let currentLevel:NSNumber = user["currentLevel"] as! NSNumber
+                    let currentLevel:NSNumber = user["currentLevelIndex"] as! NSNumber
                     
                     self.userLabel.text = NSString(format: "Current User: %@", user.username) as String
                     self.currentLevelLabel.text = NSString(format: "Current Level: %@", currentLevel) as String
@@ -44,6 +48,7 @@ class MainMenuViewController: UIViewController {
                     self.signUpButton.hidden = true
                     self.startButton.hidden = false
                     self.signOutButton.hidden = false
+                    self.viewLevelsButton.hidden = false
                     
                     self.view.setNeedsUpdateConstraints()
                 } else {
@@ -59,11 +64,13 @@ class MainMenuViewController: UIViewController {
             self.signUpButton.hidden = false
             self.startButton.hidden = true
             self.signOutButton.hidden = true
+            self.viewLevelsButton.hidden = true
             
             self.view.setNeedsUpdateConstraints()
         }
     }
     
+    @IBAction func viewLevelsButtonPressed(sender:UIButton) { }
     @IBAction func startButtonPressed(sender: UIButton) { }
     @IBAction func signUpButtonPressed(sender: UIButton) {}
     @IBAction func signInButtonPressed(sender: UIButton) {}
@@ -92,7 +99,7 @@ class MainMenuViewController: UIViewController {
             var newUser = PFUser()
             newUser.username = inputUsername
             newUser.password = inputPassword
-            newUser["currentLevel"] = 1
+            newUser["currentLevelIndex"] = 1
             
             newUser.signUpInBackgroundWithBlock({ (success, error) -> Void in
                 if (success) {
@@ -131,5 +138,16 @@ class MainMenuViewController: UIViewController {
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "startLevel") {
+            
+            let user = PFUser.currentUser()
+            let levels = (UIApplication.sharedApplication().delegate! as! AppDelegate).levels
+            let currentLevelIndex = user["currentLevelIndex"] as! NSInteger
+            let currentLevel: Level = levels[currentLevelIndex]
+            let destination = (segue.destinationViewController as! GameViewController)
+            destination.loadLevel(currentLevel)
+        }
+    }
     
 }
