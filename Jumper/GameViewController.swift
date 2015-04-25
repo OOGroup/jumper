@@ -74,9 +74,9 @@ class GameViewController: UIViewController, LevelDelegate {
     * Level Delegate
     */
     func levelDidComplete() {
-        let currentLevelIndex = user["currentLevel"] as! NSInteger
+        let currentLevelIndex = user["currentLevelIndex"] as! NSInteger
         let nextLevelIndex = currentLevelIndex + 1
-        user["currentLevel"] = nextLevelIndex
+        user["currentLevelIndex"] = nextLevelIndex
         
         user.saveInBackgroundWithBlock { (success, error) -> Void in
             if (!success) {
