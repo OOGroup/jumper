@@ -10,9 +10,6 @@ import UIKit
 import Parse
 
 class MainMenuViewController: UIViewController {
-    
-    
-//    let user = PFUser.currentUser()
    
     @IBOutlet weak var viewLevelsButton: UIButton!
     @IBOutlet var currentLevelLabel: UILabel!
