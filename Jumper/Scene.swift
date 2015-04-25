@@ -51,11 +51,12 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         self.physicsBody = borderBody
         
         
-        let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
-        let wall = childNodeWithName(WallCategoryName) as SKSpriteNode!
-        let bottom = childNodeWithName(BottomCategoryName) as SKSpriteNode!
-        let goal = childNodeWithName(GoalCategoryName) as SKSpriteNode!
+        let player = childNodeWithName(PlayerCategoryName) as! SKSpriteNode!
+        let wall = childNodeWithName(WallCategoryName) as! SKSpriteNode!
+        let bottom = childNodeWithName(BottomCategoryName) as! SKSpriteNode!
+        let goal = childNodeWithName(GoalCategoryName) as! SKSpriteNode!
         original = player.position
+
         
         wall.physicsBody!.categoryBitMask = WallCategory
         player.physicsBody!.categoryBitMask = PlayerCategory
@@ -68,13 +69,16 @@ class Scene: SKScene, SKPhysicsContactDelegate {
 
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        var touch = touches.anyObject() as UITouch!
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        var touch = touches.first as! UITouch
         var touchLocation = touch.locationInNode(self)
         
         if let body = physicsWorld.bodyAtPoint(touchLocation) {
             if body.node!.name == PlayerCategoryName {
-                let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
+
+                let player = childNodeWithName(PlayerCategoryName) as! SKSpriteNode!
+                
+
                 pathToDraw = CGPathCreateMutable()
                 CGPathMoveToPoint(pathToDraw, nil, touchLocation.x, touchLocation.y)
                 CGPathAddLineToPoint(pathToDraw, nil, touchLocation.x+0.01, touchLocation.y+0.01)
@@ -93,11 +97,13 @@ class Scene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        var touch = touches.anyObject() as UITouch!
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        var touch = touches.first as! UITouch
         var touchLocation = touch.locationInNode(self)
-        let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
+        let player = childNodeWithName(PlayerCategoryName) as! SKSpriteNode!
         let vx = (touchLocation.x - xi)
         let vy = (touchLocation.y - yi)
         let actionMoveDone = SKAction.removeFromParent()
@@ -113,8 +119,8 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        var touch = touches.anyObject() as UITouch!
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        var touch = touches.first as! UITouch
         var touchLocation = touch.locationInNode(self)
         if lock == 1 {
             pathToDraw = CGPathCreateMutable()
@@ -123,14 +129,14 @@ class Scene: SKScene, SKPhysicsContactDelegate {
             lineNode.path = pathToDraw
         }
         else if lock == 2 {
-            let tramp = childNodeWithName(TrampCategoryName) as SKSpriteNode!
+            let tramp = childNodeWithName(TrampCategoryName) as! SKSpriteNode!
             tramp.position = touchLocation
         }
     }
     
     override func update(currentTime: NSTimeInterval) {
         if flag == 1 {
-            let player = childNodeWithName(PlayerCategoryName) as SKSpriteNode!
+            let player = childNodeWithName(PlayerCategoryName) as! SKSpriteNode!
             player.runAction(SKAction.removeFromParent())
             setUpPlayer()
             flag = 0
