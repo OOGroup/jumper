@@ -13,7 +13,6 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
     let levels = [
         Level(sceneFile: "level-one"),
         Level(sceneFile: "level-two"),
@@ -30,21 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
         Parse.enableLocalDatastore()
+        Parse.setApplicationId("kgbSIeaR7TKOxT3vBxPfue3bTbvTK5jk3qk6XLqY", clientKey: "VKhqGAmJGFd9jcjq11JoQkQCTkDRk9sFEN5APvDf")
         
-        // ****************************************************************************
-        // Uncomment this line if you want to enable Crash Reporting
-        // ParseCrashReporting.enable()
-        //
-        // Uncomment and fill in with your Parse credentials:
-         Parse.setApplicationId("kgbSIeaR7TKOxT3vBxPfue3bTbvTK5jk3qk6XLqY", clientKey: "VKhqGAmJGFd9jcjq11JoQkQCTkDRk9sFEN5APvDf")
-        //
-        // If you are using Facebook, uncomment and add your FacebookAppID to your bundle's plist as
-        // described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
-        // Uncomment the line inside ParseStartProject-Bridging-Header and the following line here:
-        // PFFacebookUtils.initializeFacebook()
-        // ****************************************************************************
-        
-//        PFUser.enableAutomaticUser()
+
         
         
         let defaultACL = PFACL();

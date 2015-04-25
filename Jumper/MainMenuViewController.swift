@@ -12,7 +12,7 @@ import Parse
 class MainMenuViewController: UIViewController {
     
     
-
+//    let user = PFUser.currentUser()
    
     @IBOutlet weak var viewLevelsButton: UIButton!
     @IBOutlet var currentLevelLabel: UILabel!
@@ -40,7 +40,7 @@ class MainMenuViewController: UIViewController {
         if (user != nil) {
             user.fetchInBackgroundWithBlock { (fetchedUser, error) -> Void in
                 if (error == nil) {
-                    let currentLevel:NSNumber = user["currentLevel"] as! NSNumber
+                    let currentLevel:NSNumber = user["currentLevelIndex"] as! NSNumber
                     
                     self.userLabel.text = NSString(format: "Current User: %@", user.username) as String
                     self.currentLevelLabel.text = NSString(format: "Current Level: %@", currentLevel) as String
@@ -99,7 +99,7 @@ class MainMenuViewController: UIViewController {
             var newUser = PFUser()
             newUser.username = inputUsername
             newUser.password = inputPassword
-            newUser["currentLevel"] = 1
+            newUser["currentLevelIndex"] = 1
             
             newUser.signUpInBackgroundWithBlock({ (success, error) -> Void in
                 if (success) {
@@ -138,5 +138,16 @@ class MainMenuViewController: UIViewController {
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "startLevel") {
+            
+            let user = PFUser.currentUser()
+            let levels = (UIApplication.sharedApplication().delegate! as! AppDelegate).levels
+            let currentLevelIndex = user["currentLevelIndex"] as! NSInteger
+            let currentLevel: Level = levels[currentLevelIndex]
+            let destination = (segue.destinationViewController as! GameViewController)
+            destination.loadLevel(currentLevel)
+        }
+    }
     
 }

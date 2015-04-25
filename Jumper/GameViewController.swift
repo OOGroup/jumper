@@ -30,38 +30,23 @@ class GameViewController: UIViewController {
     
     /* Instance Variables */
     let sceneFiles = []
-    var current :AnyObject?
-    let levels = UIApplication.sharedApplication().delegate.levels
-//    let levels = [
-//        Level(sceneFile: "level-one"),
-//        Level(sceneFile: "level-two"),
-//        Level(sceneFile: "level-three"),
-//        Level(sceneFile: "level-four"),
-//        Level(sceneFile: "level-five")
-//    ]
+    var current:AnyObject?
+    let levels = (UIApplication.sharedApplication().delegate! as! AppDelegate).levels
     var user = PFUser.currentUser()
     
     /* Init Methods */
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        configureLevels(self.levels)
+        configureLevels(levels)
     }
     
     /* View Will Appear */
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-<<<<<<< HEAD
-        //let currentLevelIndex = user[current] as NSInteger
-            //as NSInteger
-        let currentLevelIndex = user["currentLevel"] as NSInteger
-=======
-        
-        let currentLevelIndex = user["currentLevel"] as! NSInteger
->>>>>>> 3157fd0a80e5132569b630fa70937a5ccfe53054
-        let currentLevel: Level = self.levels[currentLevelIndex+3]
+
 
         
-        loadLevel(currentLevel)
+
     }
     
     /* Configure levels */
