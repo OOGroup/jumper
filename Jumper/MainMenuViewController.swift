@@ -11,6 +11,10 @@ import Parse
 
 class MainMenuViewController: UIViewController {
     
+    
+
+   
+    @IBOutlet weak var viewLevelsButton: UIButton!
     @IBOutlet var currentLevelLabel: UILabel!
     @IBOutlet var userLabel: UILabel!
     @IBOutlet var startButton: UIButton!
@@ -44,6 +48,7 @@ class MainMenuViewController: UIViewController {
                     self.signUpButton.hidden = true
                     self.startButton.hidden = false
                     self.signOutButton.hidden = false
+                    self.viewLevelsButton.hidden = false
                     
                     self.view.setNeedsUpdateConstraints()
                 } else {
@@ -59,11 +64,13 @@ class MainMenuViewController: UIViewController {
             self.signUpButton.hidden = false
             self.startButton.hidden = true
             self.signOutButton.hidden = true
+            self.viewLevelsButton.hidden = true
             
             self.view.setNeedsUpdateConstraints()
         }
     }
     
+    @IBAction func viewLevelsButtonPressed(sender:UIButton) { }
     @IBAction func startButtonPressed(sender: UIButton) { }
     @IBAction func signUpButtonPressed(sender: UIButton) {}
     @IBAction func signInButtonPressed(sender: UIButton) {}

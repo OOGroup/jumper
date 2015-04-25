@@ -14,6 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    let levels = [
+        Level(sceneFile: "level-one"),
+        Level(sceneFile: "level-two"),
+        Level(sceneFile: "level-three"),
+        Level(sceneFile: "level-four"),
+        Level(sceneFile: "level-five")
+    ]
+    
     //--------------------------------------
     // MARK: - UIApplicationDelegate
     //--------------------------------------
