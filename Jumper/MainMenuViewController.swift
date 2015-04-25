@@ -96,7 +96,7 @@ class MainMenuViewController: UIViewController {
             var newUser = PFUser()
             newUser.username = inputUsername
             newUser.password = inputPassword
-            newUser["currentLevelIndex"] = 1
+            newUser["currentLevelIndex"] = 0
             
             newUser.signUpInBackgroundWithBlock({ (success, error) -> Void in
                 if (success) {
