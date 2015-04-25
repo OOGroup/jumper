@@ -10,9 +10,6 @@ import UIKit
 import Parse
 
 class MainMenuViewController: UIViewController {
-    
-    
-//    let user = PFUser.currentUser()
    
     @IBOutlet weak var viewLevelsButton: UIButton!
     @IBOutlet var currentLevelLabel: UILabel!
@@ -99,7 +96,7 @@ class MainMenuViewController: UIViewController {
             var newUser = PFUser()
             newUser.username = inputUsername
             newUser.password = inputPassword
-            newUser["currentLevelIndex"] = 1
+            newUser["currentLevelIndex"] = 0
             
             newUser.signUpInBackgroundWithBlock({ (success, error) -> Void in
                 if (success) {
