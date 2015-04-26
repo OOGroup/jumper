@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C05823E1AEC3E28009CB7B2 /* level-two.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C05823D1AEC3E28009CB7B2 /* level-two.sks */; };
+		0C0582421AEC4368009CB7B2 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C0582411AEC4368009CB7B2 /* background.jpg */; };
+		0C0582441AEC45F3009CB7B2 /* lava.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0582431AEC45F3009CB7B2 /* lava.png */; };
 		0CE0E6451AD1A9B000579871 /* level-four.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CE0E6441AD1A9B000579871 /* level-four.sks */; };
 		0CE0E6471AD1ABAB00579871 /* level-five.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CE0E6461AD1ABAB00579871 /* level-five.sks */; };
 		7A1DDFA91AEC5AF800181259 /* meow-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A1DDFA51AEC5AF800181259 /* meow-1.wav */; };
@@ -34,7 +37,6 @@
 		7A86E0341A969878008A148A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86E0331A969878008A148A /* SignInViewController.swift */; };
 		7ADE29361AC88C35000E6782 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE29351AC88C35000E6782 /* Level.swift */; };
 		7ADE29381AC890A1000E6782 /* level-one.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE29371AC890A1000E6782 /* level-one.sks */; };
-		7ADE293A1AC89BE8000E6782 /* level-two.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE29391AC89BE8000E6782 /* level-two.sks */; };
 		7ADE293C1AC89BF8000E6782 /* level-three.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE293B1AC89BF8000E6782 /* level-three.sks */; };
 		7ADE293E1AC89CE3000E6782 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE293D1AC89CE3000E6782 /* Scene.swift */; };
 		7ADE29411AC8A399000E6782 /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE293F1AC8A399000E6782 /* TestScene.sks */; };
@@ -59,6 +61,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C05823D1AEC3E28009CB7B2 /* level-two.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-two.sks"; sourceTree = "<group>"; };
+		0C0582411AEC4368009CB7B2 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		0C0582431AEC45F3009CB7B2 /* lava.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lava.png; path = ../../../../../Downloads/lava.png; sourceTree = "<group>"; };
 		0CE0E6441AD1A9B000579871 /* level-four.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-four.sks"; sourceTree = "<group>"; };
 		0CE0E6461AD1ABAB00579871 /* level-five.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-five.sks"; sourceTree = "<group>"; };
 		7A1DDFA51AEC5AF800181259 /* meow-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meow-1.wav"; path = "Sounds/meow-1.wav"; sourceTree = SOURCE_ROOT; };
@@ -90,7 +95,6 @@
 		7A86E0331A969878008A148A /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		7ADE29351AC88C35000E6782 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		7ADE29371AC890A1000E6782 /* level-one.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-one.sks"; sourceTree = "<group>"; };
-		7ADE29391AC89BE8000E6782 /* level-two.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-two.sks"; sourceTree = "<group>"; };
 		7ADE293B1AC89BF8000E6782 /* level-three.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-three.sks"; sourceTree = "<group>"; };
 		7ADE293D1AC89CE3000E6782 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		7ADE293F1AC8A399000E6782 /* TestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestScene.sks; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 		7A86E0041A968BC5008A148A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C0582431AEC45F3009CB7B2 /* lava.png */,
+				0C0582411AEC4368009CB7B2 /* background.jpg */,
 				988156221AB799C400E8AB7A /* trampoline.jpg */,
 				988156231AB799C400E8AB7A /* kitten.jpg */,
 				988156241AB799C400E8AB7A /* brick.jpg */,
@@ -229,7 +235,7 @@
 				988156281AB79C2700E8AB7A /* DemoLevel.swift */,
 				7ADE293D1AC89CE3000E6782 /* Scene.swift */,
 				7ADE29371AC890A1000E6782 /* level-one.sks */,
-				7ADE29391AC89BE8000E6782 /* level-two.sks */,
+				0C05823D1AEC3E28009CB7B2 /* level-two.sks */,
 				7ADE293B1AC89BF8000E6782 /* level-three.sks */,
 				0CE0E6441AD1A9B000579871 /* level-four.sks */,
 				0CE0E6461AD1ABAB00579871 /* level-five.sks */,
@@ -333,15 +339,17 @@
 				7A1DDFAC1AEC5AF800181259 /* screech.wav in Resources */,
 				7ADE293C1AC89BF8000E6782 /* level-three.sks in Resources */,
 				7A86E0151A968BC5008A148A /* LaunchScreen.xib in Resources */,
+				0C0582441AEC45F3009CB7B2 /* lava.png in Resources */,
 				988156261AB799C400E8AB7A /* kitten.jpg in Resources */,
 				0CE0E6471AD1ABAB00579871 /* level-five.sks in Resources */,
-				7ADE293A1AC89BE8000E6782 /* level-two.sks in Resources */,
 				7A86E0121A968BC5008A148A /* Images.xcassets in Resources */,
 				988156271AB799C400E8AB7A /* brick.jpg in Resources */,
 				988156251AB799C400E8AB7A /* trampoline.jpg in Resources */,
+				0C0582421AEC4368009CB7B2 /* background.jpg in Resources */,
 				0CE0E6451AD1A9B000579871 /* level-four.sks in Resources */,
 				7ADE29411AC8A399000E6782 /* TestScene.sks in Resources */,
 				7A86E0101A968BC5008A148A /* Main.storyboard in Resources */,
+				0C05823E1AEC3E28009CB7B2 /* level-two.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
