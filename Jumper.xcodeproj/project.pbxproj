@@ -12,6 +12,10 @@
 		0C0582441AEC45F3009CB7B2 /* lava.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0582431AEC45F3009CB7B2 /* lava.png */; };
 		0CE0E6451AD1A9B000579871 /* level-four.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CE0E6441AD1A9B000579871 /* level-four.sks */; };
 		0CE0E6471AD1ABAB00579871 /* level-five.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CE0E6461AD1ABAB00579871 /* level-five.sks */; };
+		7A1DDFA91AEC5AF800181259 /* meow-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A1DDFA51AEC5AF800181259 /* meow-1.wav */; };
+		7A1DDFAA1AEC5AF800181259 /* meow-3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A1DDFA61AEC5AF800181259 /* meow-3.wav */; };
+		7A1DDFAB1AEC5AF800181259 /* meow-4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A1DDFA71AEC5AF800181259 /* meow-4.wav */; };
+		7A1DDFAC1AEC5AF800181259 /* screech.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A1DDFA81AEC5AF800181259 /* screech.wav */; };
 		7A83184A1A97EB83008CF960 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8318491A97EB83008CF960 /* libstdc++.6.dylib */; };
 		7A83184C1A97EB8D008CF960 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A83184B1A97EB8D008CF960 /* MobileCoreServices.framework */; };
 		7A83184E1A97EB98008CF960 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A83184D1A97EB98008CF960 /* SystemConfiguration.framework */; };
@@ -62,6 +66,10 @@
 		0C0582431AEC45F3009CB7B2 /* lava.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lava.png; path = ../../../../../Downloads/lava.png; sourceTree = "<group>"; };
 		0CE0E6441AD1A9B000579871 /* level-four.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-four.sks"; sourceTree = "<group>"; };
 		0CE0E6461AD1ABAB00579871 /* level-five.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-five.sks"; sourceTree = "<group>"; };
+		7A1DDFA51AEC5AF800181259 /* meow-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meow-1.wav"; path = "Sounds/meow-1.wav"; sourceTree = SOURCE_ROOT; };
+		7A1DDFA61AEC5AF800181259 /* meow-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meow-3.wav"; path = "Sounds/meow-3.wav"; sourceTree = SOURCE_ROOT; };
+		7A1DDFA71AEC5AF800181259 /* meow-4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meow-4.wav"; path = "Sounds/meow-4.wav"; sourceTree = SOURCE_ROOT; };
+		7A1DDFA81AEC5AF800181259 /* screech.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = screech.wav; path = Sounds/screech.wav; sourceTree = SOURCE_ROOT; };
 		7A8318491A97EB83008CF960 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		7A83184B1A97EB8D008CF960 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		7A83184D1A97EB98008CF960 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -178,6 +186,10 @@
 				7ADE29351AC88C35000E6782 /* Level.swift */,
 				7A86E0321A9696BD008A148A /* Scenes */,
 				7A86E0111A968BC5008A148A /* Images.xcassets */,
+				7A1DDFA51AEC5AF800181259 /* meow-1.wav */,
+				7A1DDFA61AEC5AF800181259 /* meow-3.wav */,
+				7A1DDFA71AEC5AF800181259 /* meow-4.wav */,
+				7A1DDFA81AEC5AF800181259 /* screech.wav */,
 				7A86E0131A968BC5008A148A /* LaunchScreen.xib */,
 				7A8318481A97E99D008CF960 /* Frameworks */,
 				7A86E0041A968BC5008A148A /* Supporting Files */,
@@ -320,7 +332,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1DDFAB1AEC5AF800181259 /* meow-4.wav in Resources */,
+				7A1DDFAA1AEC5AF800181259 /* meow-3.wav in Resources */,
+				7A1DDFA91AEC5AF800181259 /* meow-1.wav in Resources */,
 				7ADE29381AC890A1000E6782 /* level-one.sks in Resources */,
+				7A1DDFAC1AEC5AF800181259 /* screech.wav in Resources */,
 				7ADE293C1AC89BF8000E6782 /* level-three.sks in Resources */,
 				7A86E0151A968BC5008A148A /* LaunchScreen.xib in Resources */,
 				0C0582441AEC45F3009CB7B2 /* lava.png in Resources */,
