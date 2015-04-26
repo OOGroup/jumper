@@ -143,7 +143,8 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == PlayerCategory) {
             switch secondBody.categoryBitMask {
                 case WallCategory:
-                    println("Hit wall.")
+//                    println("Hit wall.")
+                    playSound()
                     break;
                 case BottomCategory:
                     println("Hit bottom.")
@@ -155,6 +156,14 @@ class Scene: SKScene, SKPhysicsContactDelegate {
                     break;
             }
         }
+    }
+    
+    func playSound() {
+        let soundFileNames = ["meow-1.wav", "meow-3.wav", "meow-4.wav", "screech.wav"]
+        let soundFileString = soundFileNames[Int(arc4random_uniform(4))]
+        
+        NSLog("play sound")
+        self.runAction(SKAction.playSoundFileNamed(soundFileString, waitForCompletion: false))
     }
     
     func testFinish () {

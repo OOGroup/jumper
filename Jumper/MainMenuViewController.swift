@@ -37,10 +37,10 @@ class MainMenuViewController: UIViewController {
         if (user != nil) {
             user.fetchInBackgroundWithBlock { (fetchedUser, error) -> Void in
                 if (error == nil) {
-                    let currentLevel:NSNumber = user["currentLevelIndex"] as! NSNumber
+                    let currentLevel: NSInteger = (user["currentLevelIndex"] as! NSInteger) + 1
                     
                     self.userLabel.text = NSString(format: "Current User: %@", user.username) as String
-                    self.currentLevelLabel.text = NSString(format: "Current Level: %@", currentLevel) as String
+                    self.currentLevelLabel.text = NSString(format: "Current Level: %ld", currentLevel) as String
                     self.signInButton.hidden = true
                     self.signUpButton.hidden = true
                     self.startButton.hidden = false
