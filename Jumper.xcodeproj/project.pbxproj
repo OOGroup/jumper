@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C05823E1AEC3E28009CB7B2 /* level-two.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C05823D1AEC3E28009CB7B2 /* level-two.sks */; };
-		0C0582421AEC4368009CB7B2 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C0582411AEC4368009CB7B2 /* background.jpg */; };
 		0C0582441AEC45F3009CB7B2 /* lava.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0582431AEC45F3009CB7B2 /* lava.png */; };
-		0CE0E6451AD1A9B000579871 /* level-four.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CE0E6441AD1A9B000579871 /* level-four.sks */; };
-		0CE0E6471AD1ABAB00579871 /* level-five.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CE0E6461AD1ABAB00579871 /* level-five.sks */; };
+		0CD199B91AEC7E6200A5CA7F /* level-two.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CD199B81AEC7E6200A5CA7F /* level-two.sks */; };
+		0CD199BD1AEDCD4200A5CA7F /* catnip.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0CD199BC1AEDCD4200A5CA7F /* catnip.jpg */; };
+		0CD199BF1AEDCE0200A5CA7F /* catnip.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CD199BE1AEDCE0200A5CA7F /* catnip.png */; };
+		0CD199C11AEDCFFA00A5CA7F /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CD199C01AEDCFFA00A5CA7F /* background.png */; };
+		0CD199C31AEDD20A00A5CA7F /* kitten.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CD199C21AEDD20A00A5CA7F /* kitten.png */; };
+		0CE0E6451AD1A9B000579871 /* level-five.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CE0E6441AD1A9B000579871 /* level-five.sks */; };
+		0CE0E6471AD1ABAB00579871 /* level-four.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CE0E6461AD1ABAB00579871 /* level-four.sks */; };
 		7A1DDFA91AEC5AF800181259 /* meow-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A1DDFA51AEC5AF800181259 /* meow-1.wav */; };
 		7A1DDFAA1AEC5AF800181259 /* meow-3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A1DDFA61AEC5AF800181259 /* meow-3.wav */; };
 		7A1DDFAB1AEC5AF800181259 /* meow-4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A1DDFA71AEC5AF800181259 /* meow-4.wav */; };
@@ -45,7 +48,6 @@
 		9881561F1AB7938000E8AB7A /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881561E1AB7938000E8AB7A /* GameObject.swift */; };
 		988156211AB7963B00E8AB7A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988156201AB7963B00E8AB7A /* Player.swift */; };
 		988156251AB799C400E8AB7A /* trampoline.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 988156221AB799C400E8AB7A /* trampoline.jpg */; };
-		988156261AB799C400E8AB7A /* kitten.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 988156231AB799C400E8AB7A /* kitten.jpg */; };
 		988156271AB799C400E8AB7A /* brick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 988156241AB799C400E8AB7A /* brick.jpg */; };
 		988156291AB79C2700E8AB7A /* DemoLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988156281AB79C2700E8AB7A /* DemoLevel.swift */; };
 /* End PBXBuildFile section */
@@ -61,11 +63,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C05823D1AEC3E28009CB7B2 /* level-two.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-two.sks"; sourceTree = "<group>"; };
-		0C0582411AEC4368009CB7B2 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		0C0582431AEC45F3009CB7B2 /* lava.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lava.png; path = ../../../../../Downloads/lava.png; sourceTree = "<group>"; };
-		0CE0E6441AD1A9B000579871 /* level-four.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-four.sks"; sourceTree = "<group>"; };
-		0CE0E6461AD1ABAB00579871 /* level-five.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-five.sks"; sourceTree = "<group>"; };
+		0CD199B81AEC7E6200A5CA7F /* level-two.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-two.sks"; sourceTree = "<group>"; };
+		0CD199BC1AEDCD4200A5CA7F /* catnip.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = catnip.jpg; path = ../../../../../Desktop/catnip.jpg; sourceTree = "<group>"; };
+		0CD199BE1AEDCE0200A5CA7F /* catnip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = catnip.png; path = ../../../../../Desktop/catnip.png; sourceTree = "<group>"; };
+		0CD199C01AEDCFFA00A5CA7F /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../../../Desktop/background.png; sourceTree = "<group>"; };
+		0CD199C21AEDD20A00A5CA7F /* kitten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kitten.png; path = ../../../../../Desktop/kitten.png; sourceTree = "<group>"; };
+		0CE0E6441AD1A9B000579871 /* level-five.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-five.sks"; sourceTree = "<group>"; };
+		0CE0E6461AD1ABAB00579871 /* level-four.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "level-four.sks"; sourceTree = "<group>"; };
 		7A1DDFA51AEC5AF800181259 /* meow-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meow-1.wav"; path = "Sounds/meow-1.wav"; sourceTree = SOURCE_ROOT; };
 		7A1DDFA61AEC5AF800181259 /* meow-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meow-3.wav"; path = "Sounds/meow-3.wav"; sourceTree = SOURCE_ROOT; };
 		7A1DDFA71AEC5AF800181259 /* meow-4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meow-4.wav"; path = "Sounds/meow-4.wav"; sourceTree = SOURCE_ROOT; };
@@ -103,7 +108,6 @@
 		9881561E1AB7938000E8AB7A /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		988156201AB7963B00E8AB7A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		988156221AB799C400E8AB7A /* trampoline.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trampoline.jpg; sourceTree = "<group>"; };
-		988156231AB799C400E8AB7A /* kitten.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kitten.jpg; sourceTree = "<group>"; };
 		988156241AB799C400E8AB7A /* brick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brick.jpg; sourceTree = "<group>"; };
 		988156281AB79C2700E8AB7A /* DemoLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoLevel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,10 +204,12 @@
 		7A86E0041A968BC5008A148A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0CD199C21AEDD20A00A5CA7F /* kitten.png */,
+				0CD199C01AEDCFFA00A5CA7F /* background.png */,
+				0CD199BE1AEDCE0200A5CA7F /* catnip.png */,
+				0CD199BC1AEDCD4200A5CA7F /* catnip.jpg */,
 				0C0582431AEC45F3009CB7B2 /* lava.png */,
-				0C0582411AEC4368009CB7B2 /* background.jpg */,
 				988156221AB799C400E8AB7A /* trampoline.jpg */,
-				988156231AB799C400E8AB7A /* kitten.jpg */,
 				988156241AB799C400E8AB7A /* brick.jpg */,
 				7A86E0051A968BC5008A148A /* Info.plist */,
 			);
@@ -235,10 +241,10 @@
 				988156281AB79C2700E8AB7A /* DemoLevel.swift */,
 				7ADE293D1AC89CE3000E6782 /* Scene.swift */,
 				7ADE29371AC890A1000E6782 /* level-one.sks */,
-				0C05823D1AEC3E28009CB7B2 /* level-two.sks */,
+				0CD199B81AEC7E6200A5CA7F /* level-two.sks */,
 				7ADE293B1AC89BF8000E6782 /* level-three.sks */,
-				0CE0E6441AD1A9B000579871 /* level-four.sks */,
-				0CE0E6461AD1ABAB00579871 /* level-five.sks */,
+				0CE0E6461AD1ABAB00579871 /* level-four.sks */,
+				0CE0E6441AD1A9B000579871 /* level-five.sks */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -332,24 +338,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD199C31AEDD20A00A5CA7F /* kitten.png in Resources */,
 				7A1DDFAB1AEC5AF800181259 /* meow-4.wav in Resources */,
 				7A1DDFAA1AEC5AF800181259 /* meow-3.wav in Resources */,
 				7A1DDFA91AEC5AF800181259 /* meow-1.wav in Resources */,
+				0CD199BD1AEDCD4200A5CA7F /* catnip.jpg in Resources */,
 				7ADE29381AC890A1000E6782 /* level-one.sks in Resources */,
 				7A1DDFAC1AEC5AF800181259 /* screech.wav in Resources */,
 				7ADE293C1AC89BF8000E6782 /* level-three.sks in Resources */,
 				7A86E0151A968BC5008A148A /* LaunchScreen.xib in Resources */,
+				0CD199BF1AEDCE0200A5CA7F /* catnip.png in Resources */,
 				0C0582441AEC45F3009CB7B2 /* lava.png in Resources */,
-				988156261AB799C400E8AB7A /* kitten.jpg in Resources */,
-				0CE0E6471AD1ABAB00579871 /* level-five.sks in Resources */,
+				0CE0E6471AD1ABAB00579871 /* level-four.sks in Resources */,
 				7A86E0121A968BC5008A148A /* Images.xcassets in Resources */,
 				988156271AB799C400E8AB7A /* brick.jpg in Resources */,
 				988156251AB799C400E8AB7A /* trampoline.jpg in Resources */,
-				0C0582421AEC4368009CB7B2 /* background.jpg in Resources */,
-				0CE0E6451AD1A9B000579871 /* level-four.sks in Resources */,
+				0CD199C11AEDCFFA00A5CA7F /* background.png in Resources */,
+				0CE0E6451AD1A9B000579871 /* level-five.sks in Resources */,
 				7ADE29411AC8A399000E6782 /* TestScene.sks in Resources */,
 				7A86E0101A968BC5008A148A /* Main.storyboard in Resources */,
-				0C05823E1AEC3E28009CB7B2 /* level-two.sks in Resources */,
+				0CD199B91AEC7E6200A5CA7F /* level-two.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E6BCF3F9-400F-4832-B808-1FA6ED40453E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Jumper</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6D6732C196DCF887CF6CE23EA4DAA3C01BDC84BA</key>
 		<string>https://github.com/OOGroup/jumper.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Jumper.xcodeproj</string>
+	<string>Jumper.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6D6732C196DCF887CF6CE23EA4DAA3C01BDC84BA</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>6D6732C196DCF887CF6CE23EA4DAA3C01BDC84BA</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Jumper</string>
+			<string>jumper</string>
 		</dict>
 	</array>
 </dict>
