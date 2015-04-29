@@ -234,13 +234,13 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         self.sceneDelegate?.goalReached()
     }
     
-    /*
+    
     func addUpScore() {
-        var flickScore = numFlicks * ???
-        var resetScore = numResets * ???
+        var flickScore = 1000 - numFlicks * 5
+        var resetScore = 1000 - numResets * 5
         var catTreatScore = (catTreatsCollected) * 1000
         var totalScore = flickScore + resetScore + catTreatScore
-    }*/
+    }
     
     func setUpPlayer() {
         let player = SKSpriteNode(imageNamed: "kitten.png")
