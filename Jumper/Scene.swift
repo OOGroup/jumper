@@ -11,7 +11,7 @@ import SpriteKit
 import Darwin
 
 protocol SceneDelegate {
-    func goalReached()
+    func goalReached(score:NSInteger)
 }
 
 class Scene: SKScene, SKPhysicsContactDelegate {
@@ -199,16 +199,12 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == PlayerCategory) {
             switch secondBody.categoryBitMask {
                 case WallCategory:
-                    if (!soundPlayedRecently) {
-                        playSound()
-                        soundPlayedRecently = true
-                        var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateSoundPlayed"), userInfo: nil, repeats: false)
-                    }
+                    playSound()
                     
                     break;
                 case BottomCategory:
                     bottomFlag = 1
-                    println("Hit bottom")
+                    playSound()
                     break;
                 case GoalCategory:
                     testFinish()
@@ -237,24 +233,33 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         let soundFileString = soundFileNames[Int(arc4random_uniform(4))]
         
         NSLog("play sound")
-        self.runAction(SKAction.playSoundFileNamed(soundFileString, waitForCompletion: true))
+        
+        if (!soundPlayedRecently) {
+            var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateSoundPlayed"), userInfo: nil, repeats: false)
+            timer.fire()
+            self.runAction(SKAction.playSoundFileNamed(soundFileString, waitForCompletion: true))
+            soundPlayedRecently = true
+        }
     }
     
     func testFinish () {
-        println("YOU WIN!")
         if (!levelFinished) {
             levelFinished = true
-            self.sceneDelegate?.goalReached()
+            
+            
+            let totalScore = addUpScore() as NSInteger
+            self.sceneDelegate?.goalReached(totalScore)
         }
         
     }
     
     
-    func addUpScore() {
-        var flickScore = 1000 - numFlicks * 5
-        var resetScore = 1000 - numResets * 5
-        var catTreatScore = (catTreatsCollected) * 1000
-        var totalScore = flickScore + resetScore + catTreatScore
+    func addUpScore() -> NSInteger {
+        var flickScore: NSInteger = 1000 - numFlicks * 5
+        var resetScore: NSInteger = 1000 - numResets * 50
+        var catTreatScore: NSInteger = (catTreatsCollected) * 1000
+        var totalScore: NSInteger = flickScore + resetScore + catTreatScore
+        return totalScore
     }
     
     func setUpPlayer() {

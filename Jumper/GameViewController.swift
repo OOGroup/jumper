@@ -99,11 +99,12 @@ class GameViewController: UIViewController, UIAlertViewDelegate, LevelDelegate {
     /*
     * Level Delegate
     */
-    func levelDidComplete() {
+    func levelDidComplete(score:NSInteger) {
         
         if (currentLevelIndex < levels.count-1) {
             
-            UIAlertView(title: "Level Complete", message: "You probably scored really well!", delegate: self, cancelButtonTitle: nil, otherButtonTitles: "Replay", "Next Level").show()
+//            UIAlertView(title: "Level Complete", message: "You probably scored really well!", delegate: self, cancelButtonTitle: nil, otherButtonTitles: "Replay", "Next Level").show()
+            UIAlertView(title: "Level Complete", message: "Score: \(score)", delegate: self, cancelButtonTitle: nil, otherButtonTitles: "Replay", "Next Level").show()
             
             let userLevelIndex = user["currentLevelIndex"] as! NSInteger
             if (currentLevelIndex == userLevelIndex) {
@@ -114,24 +115,7 @@ class GameViewController: UIViewController, UIAlertViewDelegate, LevelDelegate {
                     }
                 })
             }
-        } 
-        
-//        let currentLevelIndex = user["currentLevelIndex"] as! NSInteger
-//        let nextLevelIndex = currentLevelIndex + 1
-//        user["currentLevelIndex"] = nextLevelIndex
-//        
-//        user.saveInBackgroundWithBlock { (success, error) -> Void in
-//            if (!success) {
-//                NSLog("Error saving user", error)
-//            }
-//        }
-//        
-//        if (nextLevelIndex < levels.count) {
-//            let nextLevel: Level = self.levels[nextLevelIndex]
-//            loadLevel(nextLevel)
-//        } else {
-//            NSLog("Game over!")
-//        }
+        }
     }
 
     /* Default View Setup Methods*/

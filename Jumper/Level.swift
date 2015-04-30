@@ -10,7 +10,7 @@ import AVFoundation
 import SpriteKit
 
 protocol LevelDelegate {
-    func levelDidComplete()
+    func levelDidComplete(score:NSInteger)
 }
 
 class Level: SceneDelegate {
@@ -38,8 +38,7 @@ class Level: SceneDelegate {
     /*
     *   Scene Delegate
     */
-    func goalReached() {
-        NSLog("goal reached!")
-        self.levelDelegate?.levelDidComplete()
+    func goalReached(score:NSInteger) {
+        self.levelDelegate?.levelDidComplete(score)
     }
 }
