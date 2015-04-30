@@ -26,7 +26,7 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController, LevelDelegate {
+class GameViewController: UIViewController, UIAlertViewDelegate, LevelDelegate {
     
     /* Instance Variables */
     let sceneFiles = []
@@ -34,12 +34,15 @@ class GameViewController: UIViewController, LevelDelegate {
     let levels = (UIApplication.sharedApplication().delegate! as! AppDelegate).levels
     var user = PFUser.currentUser()
     
+    var currentLevelIndex: NSInteger = 0
+    
     
     
     /* Init Methods */
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configureLevels(levels)
+        currentLevelIndex = user["currentLevelIndex"] as! NSInteger
     }
     
     /* View Will Appear */
@@ -70,26 +73,65 @@ class GameViewController: UIViewController, LevelDelegate {
         }
     }
     
+    func nextLevel() {
+        let nextLevelIndex = currentLevelIndex+1
+        let userLevelIndex = user["currentLevelIndex"] as! NSInteger
+        if (nextLevelIndex > userLevelIndex) {
+            
+        }
+        currentLevelIndex = nextLevelIndex
+        loadLevel(levels[nextLevelIndex])
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        switch (buttonIndex) {
+        case 0:
+            loadLevel(levels[currentLevelIndex])
+            break
+        case 1:
+            nextLevel()
+            break
+        default:
+            break
+        }
+    }
+    
     /*
     * Level Delegate
     */
     func levelDidComplete() {
-        let currentLevelIndex = user["currentLevelIndex"] as! NSInteger
-        let nextLevelIndex = currentLevelIndex + 1
-        user["currentLevelIndex"] = nextLevelIndex
         
-        user.saveInBackgroundWithBlock { (success, error) -> Void in
-            if (!success) {
-                NSLog("Error saving user", error)
+        if (currentLevelIndex < levels.count-1) {
+            
+            UIAlertView(title: "Level Complete", message: "You probably scored really well!", delegate: self, cancelButtonTitle: nil, otherButtonTitles: "Replay", "Next Level").show()
+            
+            let userLevelIndex = user["currentLevelIndex"] as! NSInteger
+            if (currentLevelIndex == userLevelIndex) {
+                user["currentLevelIndex"] = currentLevelIndex + 1
+                user.saveInBackgroundWithBlock({ (success, error) -> Void in
+                    if (!success) {
+                        NSLog("Error saving user", error)
+                    }
+                })
             }
-        }
+        } 
         
-        if (nextLevelIndex < levels.count) {
-            let nextLevel: Level = self.levels[nextLevelIndex]
-            loadLevel(nextLevel)
-        } else {
-            NSLog("Game over!")
-        }
+//        let currentLevelIndex = user["currentLevelIndex"] as! NSInteger
+//        let nextLevelIndex = currentLevelIndex + 1
+//        user["currentLevelIndex"] = nextLevelIndex
+//        
+//        user.saveInBackgroundWithBlock { (success, error) -> Void in
+//            if (!success) {
+//                NSLog("Error saving user", error)
+//            }
+//        }
+//        
+//        if (nextLevelIndex < levels.count) {
+//            let nextLevel: Level = self.levels[nextLevelIndex]
+//            loadLevel(nextLevel)
+//        } else {
+//            NSLog("Game over!")
+//        }
     }
 
     /* Default View Setup Methods*/

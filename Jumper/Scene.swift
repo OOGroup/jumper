@@ -46,6 +46,9 @@ class Scene: SKScene, SKPhysicsContactDelegate {
     var catTreatsCollected: Int = 0
     var trampsHit: Int = 0
     
+    var levelFinished: Bool = false
+    var soundPlayedRecently: Bool = false
+    
     
     lazy var lineNode: SKShapeNode = SKShapeNode()
     var pathToDraw: CGMutablePathRef = CGPathCreateMutable()
@@ -196,8 +199,12 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == PlayerCategory) {
             switch secondBody.categoryBitMask {
                 case WallCategory:
-//                    println("Hit wall.")
-                    playSound()
+                    if (!soundPlayedRecently) {
+                        playSound()
+                        soundPlayedRecently = true
+                        var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateSoundPlayed"), userInfo: nil, repeats: false)
+                    }
+                    
                     break;
                 case BottomCategory:
                     bottomFlag = 1
@@ -221,17 +228,25 @@ class Scene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func updateSoundPlayed (){
+        soundPlayedRecently = false
+    }
+    
     func playSound() {
         let soundFileNames = ["meow-1.wav", "meow-3.wav", "meow-4.wav", "screech.wav"]
         let soundFileString = soundFileNames[Int(arc4random_uniform(4))]
         
         NSLog("play sound")
-        self.runAction(SKAction.playSoundFileNamed(soundFileString, waitForCompletion: false))
+        self.runAction(SKAction.playSoundFileNamed(soundFileString, waitForCompletion: true))
     }
     
     func testFinish () {
         println("YOU WIN!")
-        self.sceneDelegate?.goalReached()
+        if (!levelFinished) {
+            levelFinished = true
+            self.sceneDelegate?.goalReached()
+        }
+        
     }
     
     

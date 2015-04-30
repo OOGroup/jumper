@@ -46,6 +46,7 @@ class LevelViewController: UITableViewController, UITableViewDelegate
             let indexPath = self.tableView.indexPathForSelectedRow()!
             let selectedLevel = self.levels[indexPath.row]
             
+            gameViewController.currentLevelIndex = indexPath.row
             gameViewController.loadLevel(selectedLevel)
         }
     }
